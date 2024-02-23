@@ -36,7 +36,7 @@
     <img src="Jordan Air.jpg" alt="Jordan Air">
 </a>
 
-<a href="https://augmentedrealityweb.github.io/Produse2/" class="image-link">
+<a href="https://augmentedrealityweb.github.io/produse2/" class="image-link">
     <img src="Nike Free Malcon.jpg" alt="Nike Free Malcon">
 </a>
 

@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -17,6 +17,9 @@
             height: 100vh;
         }
         .image-link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             margin: 20px;
         }
         img {
@@ -28,17 +31,29 @@
         img:hover {
             transform: scale(1.05); /* Mărește imaginea puțin când utilizatorul trece cu mouse-ul peste */
         }
+        .image-text {
+            margin-top: 10px;
+            text-align: center;
+            color: white; /* Schimbă culoarea textului dacă este necesar pentru a se potrivi cu fundalul */
+            font-size: 16px; /* Ajustează mărimea textului după preferințe */
+        }
     </style>
 </head>
 <body>
 
-<a href="https://augmentedrealityweb.github.io/Produse/" class="image-link">
-    <img src="Jordan Air.jpg" alt="Jordan Air">
-</a>
+<div class="image-link">
+    <a href="https://augmentedrealityweb.github.io/Produse/">
+        <img src="AirForce 1.jpg" alt="AirForce 1">
+    </a>
+    <div class="image-text">Încălțăminte (apasă pentru modele 3D)</div>
+</div>
 
-<a href="https://augmentedrealityweb.github.io/produse2/" class="image-link">
-    <img src="Nike Free Malcon.jpg" alt="Nike Free Malcon">
-</a>
+<div class="image-link">
+    <a href="https://augmentedrealityweb.github.io/produse2/">
+        <img src="Cactus.jpg" alt="Cactus">
+    </a>
+    <div class="image-text">Diverse (apasă pentru modele 3D)</div>
+</div>
 
 </body>
 </html>

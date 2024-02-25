@@ -64,7 +64,7 @@
 
 <div class="image-link">
     <a href="https://augmentedrealityweb.github.io/Scaun-Ikea/">
-        <img src="scaun.jpg" alt="Scaun Ikea">
+        <img src="Scaun.jpg" alt="Scaun Ikea">
     </a>
     <div class="image-text">Scaun Ikea (apasă pentru modele 3D)</div>
 </div>

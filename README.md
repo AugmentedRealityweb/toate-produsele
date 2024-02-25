@@ -61,7 +61,13 @@
     </a>
     <div class="image-text">Noodle Pack (apasă pentru model 3D)</div>
 </div>
-<!-- Aici se termină noul bloc div adăugat -->
+
+<div class="image-link">
+    <a href="https://augmentedrealityweb.github.io/Scaun-Ikea/">
+        <img src="scaun.jpg" alt="Scaun Ikea">
+    </a>
+    <div class="image-text">Scaun Ikea (apasă pentru modele 3D)</div>
+</div>
 
 </body>
 </html>

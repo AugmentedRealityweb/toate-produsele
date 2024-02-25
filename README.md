@@ -20,7 +20,7 @@
             flex-wrap: wrap;
             justify-content: space-around; /* Ajustează această valoare după preferințe */
             width: 80%; /* Ajustează lățimea container-ului după preferințe */
-            max-width: 1400px; /* Ajustează lățimea maximă a container-ului după preferințe */
+            max-width: 1550px; /* Ajustează lățimea maximă a container-ului după preferințe */
         }
         .image-link {
             display: flex;
@@ -53,7 +53,7 @@
         <a href="https://augmentedrealityweb.github.io/Produse/">
             <img src="AirForce 1.jpg" alt="AirForce 1">
         </a>
-        <div class="image-text">Încălțăminte (apasă pentru model 3D)</div>
+        <div class="image-text">Nike AF1 (apasă pentru model 3D)</div>
     </div>
 
     <div class="image-link">

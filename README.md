@@ -20,7 +20,7 @@
             flex-wrap: wrap;
             justify-content: space-around; /* Ajustează această valoare după preferințe */
             width: 80%; /* Ajustează lățimea container-ului după preferințe */
-            max-width: 1200px; /* Ajustează lățimea maximă a container-ului după preferințe */
+            max-width: 1400px; /* Ajustează lățimea maximă a container-ului după preferințe */
         }
         .image-link {
             display: flex;
@@ -42,7 +42,7 @@
             margin-top: 10px;
             text-align: center;
             color: white;
-            font-size: 10px;
+            font-size: 13px;
         }
     </style>
 </head>

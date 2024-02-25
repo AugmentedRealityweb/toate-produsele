@@ -15,58 +15,67 @@
             justify-content: center;
             height: 100vh;
         }
+        .images-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around; /* Ajustează această valoare după preferințe */
+            width: 80%; /* Ajustează lățimea container-ului după preferințe */
+            max-width: 1200px; /* Ajustează lățimea maximă a container-ului după preferințe */
+        }
         .image-link {
             display: flex;
             flex-direction: column;
             align-items: center;
             margin: 20px;
+            flex-basis: 30%; /* Ajustează acest procentaj pentru a controla cât spațiu ocupă fiecare element pe rând */
         }
         img {
-            width: 200px; /* Sau orice altă dimensiune */
+            width: 100%; /* Ajustează acest procentaj pentru a controla lățimea imaginilor */
             height: auto;
-            border-radius: 10px; /* Opțional, pentru colțuri rotunjite */
-            transition: transform 0.2s; /* Animație pentru efect de hover */
+            border-radius: 10px;
+            transition: transform 0.2s;
         }
         img:hover {
-            transform: scale(1.05); /* Mărește imaginea puțin când utilizatorul trece cu mouse-ul peste */
+            transform: scale(1.05);
         }
         .image-text {
             margin-top: 10px;
             text-align: center;
-            color: white; /* Schimbă culoarea textului dacă este necesar pentru a se potrivi cu fundalul */
-            font-size: 16px; /* Ajustează mărimea textului după preferințe */
+            color: white;
+            font-size: 16px;
         }
     </style>
 </head>
 <body>
 
-<div class="image-link">
-    <a href="https://augmentedrealityweb.github.io/Produse/">
-        <img src="AirForce 1.jpg" alt="AirForce 1">
-    </a>
-    <div class="image-text">Încălțăminte (apasă pentru modele 3D)</div>
-</div>
+<div class="images-container"> <!-- Container pentru imaginile care trebuie să fie afișate pe 3 coloane -->
+    <div class="image-link">
+        <a href="https://augmentedrealityweb.github.io/Produse/">
+            <img src="AirForce 1.jpg" alt="AirForce 1">
+        </a>
+        <div class="image-text">Încălțăminte (apasă pentru model 3D)</div>
+    </div>
 
-<div class="image-link">
-    <a href="https://augmentedrealityweb.github.io/Guler-Cervical/">
-        <img src="guler.jpg" alt="Guler">
-    </a>
-    <div class="image-text">Guler Cervical (apasă pentru modele 3D)</div>
-</div>
+    <div class="image-link">
+        <a href="https://augmentedrealityweb.github.io/Guler-Cervical/">
+            <img src="guler.jpg" alt="Guler">
+        </a>
+        <div class="image-text">Guler Cervical (apasă pentru model 3D)</div>
+    </div>
 
-<!-- Aici începe noul bloc div adăugat -->
-<div class="image-link">
-    <a href="https://augmentedrealityweb.github.io/Noodle/">
-        <img src="poza.jpg" alt="Noodle Pack">
-    </a>
-    <div class="image-text">Noodle Pack (apasă pentru model 3D)</div>
-</div>
+    <div class="image-link">
+        <a href="https://augmentedrealityweb.github.io/Noodle/">
+            <img src="poza.jpg" alt="Noodle Pack">
+        </a>
+        <div class="image-text">Noodle Pack (apasă pentru model 3D)</div>
+    </div>
 
-<div class="image-link">
-    <a href="https://augmentedrealityweb.github.io/Scaun-Ikea/">
-        <img src="Scaun.jpg" alt="Scaun Ikea">
-    </a>
-    <div class="image-text">Scaun Ikea (apasă pentru modele 3D)</div>
+    <div class="image-link">
+        <a href="https://augmentedrealityweb.github.io/Scaun-Ikea/">
+            <img src="Scaun.jpg" alt="Scaun Ikea">
+        </a>
+        <div class="image-text">Scaun Ikea (apasă pentru model 3D)</div>
+    </div>
 </div>
 
 </body>

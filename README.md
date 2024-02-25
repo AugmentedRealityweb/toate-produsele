@@ -42,7 +42,7 @@
             margin-top: 10px;
             text-align: center;
             color: white;
-            font-size: 16px;
+            font-size: 10px;
         }
     </style>
 </head>

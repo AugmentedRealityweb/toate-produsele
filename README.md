@@ -50,7 +50,7 @@
 
 <div class="images-container"> <!-- Container pentru imaginile care trebuie să fie afișate pe 3 coloane -->
     <div class="image-link">
-        <a href="https://augmentedrealityweb.github.io/Produse/">
+        <a href="https://augmentedrealityweb.github.io/AF1/">
             <img src="AirForce 1.jpg" alt="AirForce 1">
         </a>
         <div class="image-text">Nike AF1 (apasă pentru model 3D)</div>

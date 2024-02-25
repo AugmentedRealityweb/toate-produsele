@@ -1,4 +1,3 @@
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -49,11 +48,20 @@
 </div>
 
 <div class="image-link">
-    <a href="https://augmentedrealityweb.github.io/produse2/">
-        <img src="Cactus.jpg" alt="Cactus">
+    <a href="https://augmentedrealityweb.github.io/Guler-Cervical/">
+        <img src="guler.jpg" alt="Guler">
     </a>
-    <div class="image-text">Diverse (apasă pentru modele 3D)</div>
+    <div class="image-text">Guler Cervical (apasă pentru modele 3D)</div>
 </div>
+
+<!-- Aici începe noul bloc div adăugat -->
+<div class="image-link">
+    <a href="https://augmentedrealityweb.github.io/Noodle/">
+        <img src="poza.jpg" alt="Noodle Pack">
+    </a>
+    <div class="image-text">Noodle Pack (apasă pentru model 3D)</div>
+</div>
+<!-- Aici se termină noul bloc div adăugat -->
 
 </body>
 </html>

@@ -20,7 +20,7 @@
             flex-wrap: wrap;
             justify-content: center; /* Acest lucru ar trebui să ajute la centrat */
             width: 80%;
-            max-width: 1200px; /* Ajustează după preferințe */
+            max-width: 800px; /* Ajustează după preferințe */
             margin: auto; /* Centrarea orizontală */
         }
         .image-link {

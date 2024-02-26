@@ -42,7 +42,7 @@
             margin-top: 10px;
             text-align: center;
             color: white;
-            font-size: 16px; /* Ajustează după preferințe */
+            font-size: 13px; /* Ajustează după preferințe */
         }   
         /* Media Queries */
         @media (max-width: 768px) {

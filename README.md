@@ -48,7 +48,7 @@
         /* Media Queries */
         @media (max-width: 768px) {
             .image-link {
-                flex-basis: calc(50% - 40px); /* 2 pe rând pentru ecrane mai mici */
+                flex-basis: calc(33.33% - 30px); /* 2 pe rând pentru ecrane mai mici */
             }
             .image-text {
                 font-size: 14px; /* Text mai mic pentru ecrane mai mici */

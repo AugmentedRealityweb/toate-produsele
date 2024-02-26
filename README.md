@@ -59,7 +59,7 @@
                 margin: 10px 0; /* Reducem marja pentru telefoane */
             }
             .image-text {
-                font-size: 16px; /* Text și mai mic pentru telefoane */
+                font-size: 10px; /* Text și mai mic pentru telefoane */
             }
         }
     </style>

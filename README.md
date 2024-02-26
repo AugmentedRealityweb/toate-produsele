@@ -53,7 +53,7 @@
                 font-size: 14px; /* Text mai mic pentru ecrane mai mici */
             }
         }   
-        @media (max-width: 480px) {
+        @media (max-width: 270px) {
             .image-link {
                 flex-basis: 100%; /* 1 pe rând pentru telefoane */
                 margin: 10px 0; /* Reducem marja pentru telefoane */

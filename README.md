@@ -18,19 +18,19 @@
         .images-container {
             display: flex;
             flex-wrap: wrap;
-            justify-content: center; /* Acesta va centra modelele pe mijloc */
-            width: 80%; /* Ajustează lățimea container-ului după preferințe */
-            max-width: 1550px; /* Ajustează lățimea maximă a container-ului după preferințe */
+            justify-content: center; /* Centrează modelele */
+            width: 80%;
+            max-width: 1200px; /* Ajustează după preferințe */
         }
         .image-link {
             display: flex;
             flex-direction: column;
             align-items: center;
             margin: 20px;
-            flex-basis: calc(33.333% - 40px); /* Ajustează acest procentaj pentru a controla cât spațiu ocupă fiecare element pe rând, scăzând marja */
+            flex-basis: calc(33.333% - 40px); /* 3 pe rând, ajustează marja */
         }
         img {
-            width: 100%; /* Ajustează acest procentaj pentru a controla lățimea imaginilor */
+            width: 100%;
             height: auto;
             border-radius: 10px;
             transition: transform 0.2s;
@@ -42,12 +42,29 @@
             margin-top: 10px;
             text-align: center;
             color: white;
-            font-size: 13px;
+            font-size: 16px; /* Ajustează după preferințe */
+        }   
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .image-link {
+                flex-basis: calc(50% - 40px); /* 2 pe rând pentru ecrane mai mici */
+            }
+            .image-text {
+                font-size: 14px; /* Text mai mic pentru ecrane mai mici */
+            }
+        }   
+        @media (max-width: 480px) {
+            .image-link {
+                flex-basis: 100%; /* 1 pe rând pentru telefoane */
+                margin: 10px 0; /* Reducem marja pentru telefoane */
+            }
+            .image-text {
+                font-size: 12px; /* Text și mai mic pentru telefoane */
+            }
         }
     </style>
 </head>
 <body>
-
 <div class="images-container">
     <div class="image-link">
         <a href="https://augmentedrealityweb.github.io/Jordan/">
@@ -55,7 +72,6 @@
         </a>
         <div class="image-text">Jordan Air 200E (apasă pentru model 3D)</div>
     </div>
-
     <div class="image-link">
         <a href="https://augmentedrealityweb.github.io/Nike/">
             <img src="pozaNike.jpg" alt="pozaNike">
@@ -69,7 +85,6 @@
         </a>
         <div class="image-text">Nike AF1 (apasă pentru model 3D)</div>
     </div>
-
     <div class="image-link">
         <a href="https://augmentedrealityweb.github.io/Guler-Cervical/">
             <img src="guler.jpg" alt="Guler">
@@ -83,7 +98,6 @@
         </a>
         <div class="image-text">Noodle Pack (apasă pentru model 3D)</div>
     </div>
-
     <div class="image-link">
         <a href="https://augmentedrealityweb.github.io/Scaun-Ikea/">
             <img src="Scaun.jpg" alt="Scaun Ikea">
@@ -91,6 +105,5 @@
         <div class="image-text">Scaun Ikea (apasă pentru model 3D)</div>
     </div>
 </div>
-
 </body>
 </html>

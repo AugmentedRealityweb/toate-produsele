@@ -1,3 +1,4 @@
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -27,8 +28,8 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin: 20px;
-            flex-basis: calc(50% - 40px);
+            margin: 10px; /* Ajustat pentru a reduce spațiul pe toate dispozitivele */
+            flex-basis: calc(50% - 20px); /* Ajustat pentru a menține două imagini pe rând */
         }
         img {
             width: 100%;
@@ -45,20 +46,7 @@
             color: white;
             font-size: 13px;
         }   
-        @media (max-width: 768px) {
-            .image-link {
-                flex-basis: calc(50% - 30px);
-            }
-        }   
-        @media (max-width: 480px) {
-            .image-link {
-                flex-basis: 100%;
-                margin: 10px 0;
-            }
-            .image-text {
-                font-size: 12px;
-            }
-        }
+        /* Eliminarea media queries care schimbă numărul de imagini pe rând */
     </style>
 </head>
 <body>

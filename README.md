@@ -72,18 +72,17 @@
         </a>
         <div class="image-text">Jordan Air 200E (apasă pentru model 3D)</div>
     </div>
-    <div class="image-link">
+   <div class="image-link">
+        <a href="https://augmentedrealityweb.github.io/Noodle/">
+            <img src="poza.jpg" alt="Noodle Pack">
+        </a>
+        <div class="image-text">Noodle Pack (apasă pentru model 3D)</div>
+    </div>
+     <div class="image-link">
         <a href="https://augmentedrealityweb.github.io/Nike/">
             <img src="pozaNike.jpg" alt="pozaNike">
         </a>
         <div class="image-text">Nike Free Metcon (apasă pentru model 3D)</div>
-    </div>
-
-    <div class="image-link">
-        <a href="https://augmentedrealityweb.github.io/AF1/">
-            <img src="AirForce 1.jpg" alt="AirForce 1">
-        </a>
-        <div class="image-text">Nike AF1 (apasă pentru model 3D)</div>
     </div>
     <div class="image-link">
         <a href="https://augmentedrealityweb.github.io/Guler-Cervical/">
@@ -91,12 +90,11 @@
         </a>
         <div class="image-text">Guler Cervical (apasă pentru model 3D)</div>
     </div>
-
-    <div class="image-link">
-        <a href="https://augmentedrealityweb.github.io/Noodle/">
-            <img src="poza.jpg" alt="Noodle Pack">
+  <div class="image-link">
+        <a href="https://augmentedrealityweb.github.io/AF1/">
+            <img src="AirForce 1.jpg" alt="AirForce 1">
         </a>
-        <div class="image-text">Noodle Pack (apasă pentru model 3D)</div>
+        <div class="image-text">Nike AF1 (apasă pentru model 3D)</div>
     </div>
     <div class="image-link">
         <a href="https://augmentedrealityweb.github.io/Scaun-Ikea/">

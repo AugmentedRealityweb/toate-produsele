@@ -18,7 +18,7 @@
         .images-container {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-around; /* Ajustează această valoare după preferințe */
+            justify-content: center; /* Acesta va centra modelele pe mijloc */
             width: 80%; /* Ajustează lățimea container-ului după preferințe */
             max-width: 1550px; /* Ajustează lățimea maximă a container-ului după preferințe */
         }
@@ -27,7 +27,7 @@
             flex-direction: column;
             align-items: center;
             margin: 20px;
-            flex-basis: 30%; /* Ajustează acest procentaj pentru a controla cât spațiu ocupă fiecare element pe rând */
+            flex-basis: calc(33.333% - 40px); /* Ajustează acest procentaj pentru a controla cât spațiu ocupă fiecare element pe rând, scăzând marja */
         }
         img {
             width: 100%; /* Ajustează acest procentaj pentru a controla lățimea imaginilor */
@@ -48,21 +48,21 @@
 </head>
 <body>
 
-<div class="images-container"> <!-- Container pentru imaginile care trebuie să fie afișate pe 3 coloane -->
+<div class="images-container">
     <div class="image-link">
         <a href="https://augmentedrealityweb.github.io/Jordan/">
             <img src="pozaJordan.jpg" alt="pozaJordan">
         </a>
         <div class="image-text">Jordan Air 200E (apasă pentru model 3D)</div>
     </div>
-<div class="images-container">
+
     <div class="image-link">
         <a href="https://augmentedrealityweb.github.io/Nike/">
             <img src="pozaNike.jpg" alt="pozaNike">
         </a>
         <div class="image-text">Nike Free Metcon (apasă pentru model 3D)</div>
     </div>
-<div class="images-container"> <!-- Container pentru imaginile care trebuie să fie afișate pe 3 coloane -->
+
     <div class="image-link">
         <a href="https://augmentedrealityweb.github.io/AF1/">
             <img src="AirForce 1.jpg" alt="AirForce 1">

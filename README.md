@@ -18,16 +18,17 @@
         .images-container {
             display: flex;
             flex-wrap: wrap;
-            justify-content: center; /* Centrează modelele */
+            justify-content: center; /* Acest lucru ar trebui să ajute la centrat */
             width: 80%;
             max-width: 1200px; /* Ajustează după preferințe */
+            margin: auto; /* Centrarea orizontală */
         }
         .image-link {
             display: flex;
             flex-direction: column;
             align-items: center;
             margin: 20px;
-            flex-basis: calc(33.333% - 50px); /* 3 pe rând, ajustează marja */
+            flex-basis: calc(33.333% - 40px); /* 3 pe rând, ajustează marja */
         }
         img {
             width: 100%;
@@ -53,13 +54,13 @@
                 font-size: 14px; /* Text mai mic pentru ecrane mai mici */
             }
         }   
-        @media (max-width: 270px) {
+        @media (max-width: 480px) {
             .image-link {
                 flex-basis: 100%; /* 1 pe rând pentru telefoane */
                 margin: 10px 0; /* Reducem marja pentru telefoane */
             }
             .image-text {
-                font-size: 10px; /* Text și mai mic pentru telefoane */
+                font-size: 12px; /* Text și mai mic pentru telefoane */
             }
         }
     </style>

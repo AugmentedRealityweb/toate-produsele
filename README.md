@@ -18,17 +18,17 @@
         .images-container {
             display: flex;
             flex-wrap: wrap;
-            justify-content: center; /* Acest lucru ar trebui să ajute la centrat */
+            justify-content: center;
             width: 80%;
-            max-width: 800px; /* Ajustează după preferințe */
-            margin: auto; /* Centrarea orizontală */
+            max-width: 800px;
+            margin: auto;
         }
         .image-link {
             display: flex;
             flex-direction: column;
             align-items: center;
             margin: 20px;
-            flex-basis: calc(50% - 50px); /* 3 pe rând, ajustează marja */
+            flex-basis: calc(50% - 40px);
         }
         img {
             width: 100%;
@@ -43,24 +43,20 @@
             margin-top: 10px;
             text-align: center;
             color: white;
-            font-size: 13px; /* Ajustează după preferințe */
+            font-size: 13px;
         }   
-        /* Media Queries */
         @media (max-width: 768px) {
             .image-link {
-                flex-basis: calc(33.33% - 30px); /* 2 pe rând pentru ecrane mai mici */
-            }
-            .image-text {
-                font-size: 14px; /* Text mai mic pentru ecrane mai mici */
+                flex-basis: calc(50% - 30px);
             }
         }   
         @media (max-width: 480px) {
             .image-link {
-                flex-basis: 100%; /* 1 pe rând pentru telefoane */
-                margin: 10px 0; /* Reducem marja pentru telefoane */
+                flex-basis: 100%;
+                margin: 10px 0;
             }
             .image-text {
-                font-size: 12px; /* Text și mai mic pentru telefoane */
+                font-size: 12px;
             }
         }
     </style>
@@ -73,13 +69,13 @@
         </a>
         <div class="image-text">Jordan Air 200E (apasă pentru model 3D)</div>
     </div>
-   <div class="image-link">
+    <div class="image-link">
         <a href="https://augmentedrealityweb.github.io/Noodle/">
             <img src="poza.jpg" alt="Noodle Pack">
         </a>
         <div class="image-text">Noodle Pack (apasă pentru model 3D)</div>
     </div>
-     <div class="image-link">
+    <div class="image-link">
         <a href="https://augmentedrealityweb.github.io/Nike/">
             <img src="pozaNike.jpg" alt="pozaNike">
         </a>
@@ -91,7 +87,7 @@
         </a>
         <div class="image-text">Guler Cervical (apasă pentru model 3D)</div>
     </div>
-  <div class="image-link">
+    <div class="image-link">
         <a href="https://augmentedrealityweb.github.io/AF1/">
             <img src="AirForce 1.jpg" alt="AirForce 1">
         </a>

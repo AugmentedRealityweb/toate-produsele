@@ -50,6 +50,14 @@
 
 <div class="images-container"> <!-- Container pentru imaginile care trebuie să fie afișate pe 3 coloane -->
     <div class="image-link">
+        <a href="https://augmentedrealityweb.github.io/Jordan/">
+            <img src="pozaJordan.jpg" alt="pozaJordan">
+        </a>
+        <div class="image-text">Jordan Air 200E (apasă pentru model 3D)</div>
+    </div>
+
+<div class="images-container"> <!-- Container pentru imaginile care trebuie să fie afișate pe 3 coloane -->
+    <div class="image-link">
         <a href="https://augmentedrealityweb.github.io/AF1/">
             <img src="AirForce 1.jpg" alt="AirForce 1">
         </a>

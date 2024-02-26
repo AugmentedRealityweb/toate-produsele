@@ -28,7 +28,7 @@
             flex-direction: column;
             align-items: center;
             margin: 20px;
-            flex-basis: calc(33.333% - 40px); /* 3 pe rând, ajustează marja */
+            flex-basis: calc(50% - 50px); /* 3 pe rând, ajustează marja */
         }
         img {
             width: 100%;

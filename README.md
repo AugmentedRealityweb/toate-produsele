@@ -1,92 +1,63 @@
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modele AR Showcase</title>
+    <title>Modele 3D</title>
     <style>
         body {
             margin: 0;
             padding: 0;
+            font-family: Arial, sans-serif;
             background-image: url('fundal.jpg');
             background-size: cover;
+            background-position: center;
             display: flex;
-            flex-direction: column;
-            align-items: center;
             justify-content: center;
+            align-items: center;
             height: 100vh;
         }
-        .images-container {
+        .models-container {
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
-            width: 80%;
-            max-width: 800px;
-            margin: auto;
+            justify-content: space-around;
+            width: 660px; /* Ajustează această lățime în funcție de nevoile tale */
         }
-        .image-link {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 10px; /* Ajustat pentru a reduce spațiul pe toate dispozitivele */
-            flex-basis: calc(50% - 20px); /* Ajustat pentru a menține două imagini pe rând */
-        }
-        img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-            transition: transform 0.2s;
-        }
-        img:hover {
-            transform: scale(1.05);
-        }
-        .image-text {
-            margin-top: 10px;
+        .model {
+            margin: 10px;
             text-align: center;
+        }
+        .model-name {
+            margin-top: 5px;
             color: white;
-            font-size: 13px;
-        }   
-        /* Eliminarea media queries care schimbă numărul de imagini pe rând */
+        }
     </style>
 </head>
 <body>
-<div class="images-container">
-    <div class="image-link">
-        <a href="https://augmentedrealityweb.github.io/Jordan/">
-            <img src="pozaJordan.jpg" alt="pozaJordan">
-        </a>
-        <div class="image-text">Jordan Air 200E (apasă pentru model 3D)</div>
+
+<div class="models-container">
+    <div class="model">
+        <iframe src="https://augmentedrealityweb.github.io/AF1/index.html" width="200" height="240" style="overflow: hidden; border: none; transform: scale(1); transform-origin: 0 0; border-radius: 80px;"></iframe>
+        <div class="model-name">AirForce1</div>
     </div>
-    <div class="image-link">
-        <a href="https://augmentedrealityweb.github.io/Noodle/">
-            <img src="poza.jpg" alt="Noodle Pack">
-        </a>
-        <div class="image-text">Noodle Pack (apasă pentru model 3D)</div>
+    <div class="model">
+        <iframe src="https://augmentedrealityweb.github.io/Chanel/index.html" width="200" height="240" style="overflow: hidden; border: none; transform: scale(1); transform-origin: 0 0; border-radius: 80px;"></iframe>
+        <div class="model-name">Poșetă Chanel</div>
     </div>
-    <div class="image-link">
-        <a href="https://augmentedrealityweb.github.io/Nike/">
-            <img src="pozaNike.jpg" alt="pozaNike">
-        </a>
-        <div class="image-text">Nike Free Metcon (apasă pentru model 3D)</div>
+    <div class="model">
+        <iframe src="https://augmentedrealityweb.github.io/Guler-Cervical/index.html" width="200" height="240" style="overflow: hidden; border: none; transform: scale(1); transform-origin: 0 0; border-radius: 80px;"></iframe>
+        <div class="model-name">Guler Cervical</div>
     </div>
-    <div class="image-link">
-        <a href="https://augmentedrealityweb.github.io/Guler-Cervical/">
-            <img src="guler.jpg" alt="Guler">
-        </a>
-        <div class="image-text">Guler Cervical (apasă pentru model 3D)</div>
+    <div class="model">
+        <iframe src="https://augmentedrealityweb.github.io/Jordan/index.html" width="200" height="240" style="overflow: hidden; border: none; transform: scale(1); transform-origin: 0 0; border-radius: 80px;"></iframe>
+        <div class="model-name">AirJordan</div>
     </div>
-    <div class="image-link">
-        <a href="https://augmentedrealityweb.github.io/AF1/">
-            <img src="AirForce 1.jpg" alt="AirForce 1">
-        </a>
-        <div class="image-text">Nike AF1 (apasă pentru model 3D)</div>
+    <div class="model">
+        <iframe src="https://augmentedrealityweb.github.io/Scaun-Ikea/index.html" width="200" height="240" style="overflow: hidden; border: none; transform: scale(1); transform-origin: 0 0; border-radius: 80px;"></iframe>
+        <div class="model-name">Scaun Ikea</div>
     </div>
-    <div class="image-link">
-        <a href="https://augmentedrealityweb.github.io/Scaun-Ikea/">
-            <img src="Scaun.jpg" alt="Scaun Ikea">
-        </a>
-        <div class="image-text">Scaun Ikea (apasă pentru model 3D)</div>
+    <div class="model">
+        <iframe src="https://augmentedrealityweb.github.io/Nike/index.html" width="200" height="240" style="overflow: hidden; border: none; transform: scale(1); transform-origin: 0 0; border-radius: 80px;"></iframe>
+        <div class="model-name">Nike Metcon 4</div>
     </div>
 </div>
 </body>
-</html>

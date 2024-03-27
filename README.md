@@ -12,7 +12,7 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-image: url('fundal12.jpg');
+            background-image: url('fundal13.jpg');
             background-size: cover;
             background-position: center;
         }

@@ -17,12 +17,13 @@
             background-position: center;
         }
         .swipe-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 200px; /* Adjust this as needed */
-            overflow: hidden;
-            position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px; /* Adjust this as needed */
+    overflow: hidden;
+    position: relative;
+    margin-left: 30px;
         }
         iframe {
             width: 200px;

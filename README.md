@@ -1,8 +1,7 @@
-<html lang="ro">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modele 3D cu Limită de Activitate</title>
+    <title>Swipe pentru Modele 3D</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -10,77 +9,93 @@
             background-size: cover;
             background-position: center;
             display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            padding: 20px;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
-        .model {
-            margin-bottom: 20px;
+        .swipe-container {
+            width: 200px; /* Lățimea iframe-ului */
+            height: 240px; /* Înălțimea iframe-ului */
+            overflow: hidden;
             position: relative;
+            border-radius: 80px;
         }
-        .model-name {
-            color: #FFFFFF;
-            margin-top: 10px;
-        }
-        .inactive {
-            pointer-events: none;
-            opacity: 0.5;
+        iframe {
+            width: 200px;
+            height: 240px;
+            border: none;
+            border-radius: 80px;
         }
     </style>
 </head>
 <body>
 
-<div class="model active" id="model1" data-src="https://augmentedrealityweb.github.io/AF1/index.html">AirForce1</div>
-<div class="model" id="model2" data-src="https://augmentedrealityweb.github.io/Chanel/index.html">Poșetă Chanel</div>
-<div class="model" id="model3" data-src="https://augmentedrealityweb.github.io/Guler-Cervical/index.html">Guler Cervical</div>
-<div class="model" id="model4" data-src="https://augmentedrealityweb.github.io/Jordan/index.html">AirJordan</div>
-<div class="model" id="model5" data-src="https://augmentedrealityweb.github.io/Scaun-Ikea/index.html">Scaun Ikea</div>
-<div class="model" id="model6" data-src="https://augmentedrealityweb.github.io/Nike/index.html">Nike Metcon 4</div>
+<div class="swipe-container" id="swipe-container"></div>
 
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const models = document.querySelectorAll('.model');
+    const modelUrls = [
+        "https://augmentedrealityweb.github.io/AF1/index.html",
+        "https://augmentedrealityweb.github.io/Chanel/index.html",
+        "https://augmentedrealityweb.github.io/Guler-Cervical/index.html",
+        "https://augmentedrealityweb.github.io/Jordan/index.html",
+        "https://augmentedrealityweb.github.io/Scaun-Ikea/index.html",
+        "https://augmentedrealityweb.github.io/Nike/index.html"
+    ];
+    let currentIndex = 0;
 
-        function deactivateAllModels() {
-            models.forEach(model => {
-                const iframe = model.querySelector('iframe');
-                if (iframe) {
-                    // Salvează src într-un atribut de date și elimină src pentru a opri redarea
-                    model.setAttribute('data-active-src', iframe.src);
-                    iframe.src = '';
-                }
-                model.classList.add('inactive');
-            });
+    function loadModel(index) {
+        const container = document.getElementById('swipe-container');
+        container.innerHTML = ''; // Golește containerul
+        const iframe = document.createElement('iframe');
+        iframe.src = modelUrls[index];
+        container.appendChild(iframe);
+    }
+
+    function nextModel() {
+        currentIndex = (currentIndex + 1) % modelUrls.length; // Treci la următorul model
+        loadModel(currentIndex);
+    }
+
+    function prevModel() {
+        currentIndex = (currentIndex - 1 + modelUrls.length) % modelUrls.length; // Treci la modelul precedent
+        loadModel(currentIndex);
+    }
+
+    document.getElementById('swipe-container').addEventListener('touchstart', handleTouchStart, false);        
+    document.getElementById('swipe-container').addEventListener('touchmove', handleTouchMove, false);
+
+    let x1 = null;
+    let y1 = null;
+
+    function handleTouchStart(evt) {
+        const firstTouch = evt.touches[0];                                      
+        x1 = firstTouch.clientX;                                      
+        y1 = firstTouch.clientY;                                      
+    };                                                
+
+    function handleTouchMove(evt) {
+        if (!x1 || !y1) {
+            return false;
         }
 
-        models.forEach(model => {
-            model.addEventListener('click', function() {
-                deactivateAllModels();
-                
-                // Creați sau actualizați iframe-ul numai pentru modelul activat
-                let iframe = model.querySelector('iframe');
-                if (!iframe) {
-                    iframe = document.createElement('iframe');
-                    iframe.style.width = '200px';
-                    iframe.style.height = '240px';
-                    iframe.style.border = 'none';
-                    iframe.style.borderRadius = '80px';
-                    iframe.style.transform = 'scale(1)';
-                    iframe.style.transformOrigin = '0 0';
-                    iframe.style.overflow = 'hidden';
-                    model.appendChild(iframe);
-                }
-                // Setează src din atributul de date pentru a reactiva redarea
-                iframe.src = model.getAttribute('data-active-src') || model.getAttribute('data-src');
-                
-                model.classList.remove('inactive');
-            });
-        });
+        let x2 = evt.touches[0].clientX;
+        let y2 = evt.touches[0].clientY;
 
-        // Inițial, dezactivează toate modelele
-        deactivateAllModels();
-        // Activează primul model
-        models[0].click();
-    });
+        let xDiff = x2 - x1;
+        let yDiff = y2 - y1;
+
+        if (Math.abs(xDiff) > Math.abs(yDiff)) {/*most significant*/
+            if (xDiff > 0) {
+                prevModel(); /* swipe right */
+            } else {
+                nextModel(); /* swipe left */
+            }                       
+        } 
+        /* reset values */
+        x1 = null;
+        y1 = null;                                             
+    };
+
+    loadModel(currentIndex); // Încarcă primul model la încărcarea paginii
 </script>
 </body>

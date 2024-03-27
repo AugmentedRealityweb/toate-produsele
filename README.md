@@ -69,9 +69,9 @@
 document.addEventListener("DOMContentLoaded", function() {
     let currentSet = 0;
     const models = [
-        ["https://augmentedrealityweb.github.io/AF1/index.html", "https://augmentedrealityweb.github.io/Chanel/index.html"],
+        ["https://augmentedrealityweb.github.io/AF1/index.html", "https://augmentedrealityweb.github.io/Nike/index.html"],
         ["https://augmentedrealityweb.github.io/Guler-Cervical/index.html", "https://augmentedrealityweb.github.io/Jordan/index.html"],
-        ["https://augmentedrealityweb.github.io/Scaun-Ikea/index.html", "https://augmentedrealityweb.github.io/Nike/index.html"]
+        ["https://augmentedrealityweb.github.io/Scaun-Ikea/index.html", "https://augmentedrealityweb.github.io/Chanel/index.html"]
     ];
 
     function loadModels(setIndex) {

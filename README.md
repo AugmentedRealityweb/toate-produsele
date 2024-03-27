@@ -12,7 +12,7 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-image: url('fundal.jpg');
+            background-image: url('fundal8.jpg');
             background-size: cover;
             background-position: center;
         }
@@ -28,8 +28,8 @@
             width: 200px;
             height: 240px;
             border: none;
-            border-radius: 20%;
-            margin-bottom: 70px; /* Space between models */
+            border-radius: 30%;
+            margin-bottom: 60px; /* Space between models */
         }
         .navigation {
             display: flex;

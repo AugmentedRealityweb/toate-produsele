@@ -20,7 +20,7 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: space-around;
-            width: 660px; /* Ajustează această lățime în funcție de nevoile tale */
+            max-width: 660px; /* Ajustează această lățime în funcție de spațiul necesar pentru trei modele pe rând */
         }
         .model {
             margin: 10px;

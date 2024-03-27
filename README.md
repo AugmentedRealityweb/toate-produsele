@@ -5,35 +5,55 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-image: url('fundal.jpg');
-            background-size: cover;
-            background-position: center;
+            background-color: #f0f0f0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
+            margin: 0;
         }
         .swipe-container {
             width: 200px; /* Lățimea iframe-ului */
             height: 240px; /* Înălțimea iframe-ului */
-            overflow: hidden;
             position: relative;
-            border-radius: 80px;
+            overflow: hidden;
+            border-radius: 10px;
         }
         iframe {
-            width: 200px;
-            height: 240px;
+            width: 100%;
+            height: 100%;
             border: none;
-            border-radius: 80px;
+        }
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            transform: translateY(-50%);
+        }
+        .nav-button {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
 
-<div class="swipe-container" id="swipe-container"></div>
+<div class="swipe-container" id="swipe-container">
+    <div class="navigation">
+        <button class="nav-button" id="prev-button">&#10094;</button>
+        <button class="nav-button" id="next-button">&#10095;</button>
+    </div>
+</div>
 
 <script>
-    const modelUrls = [
+document.addEventListener("DOMContentLoaded", function() {
+    let currentModel = 0;
+    const models = [
         "https://augmentedrealityweb.github.io/AF1/index.html",
         "https://augmentedrealityweb.github.io/Chanel/index.html",
         "https://augmentedrealityweb.github.io/Guler-Cervical/index.html",
@@ -41,61 +61,27 @@
         "https://augmentedrealityweb.github.io/Scaun-Ikea/index.html",
         "https://augmentedrealityweb.github.io/Nike/index.html"
     ];
-    let currentIndex = 0;
+    const swipeContainer = document.getElementById('swipe-container');
+    const iframe = document.createElement('iframe');
+    iframe.src = models[currentModel];
+    swipeContainer.appendChild(iframe);
 
-    function loadModel(index) {
-        const container = document.getElementById('swipe-container');
-        container.innerHTML = ''; // Golește containerul
-        const iframe = document.createElement('iframe');
-        iframe.src = modelUrls[index];
-        container.appendChild(iframe);
+    function changeModel(newIndex) {
+        currentModel = newIndex;
+        iframe.src = models[currentModel];
     }
 
-    function nextModel() {
-        currentIndex = (currentIndex + 1) % modelUrls.length; // Treci la următorul model
-        loadModel(currentIndex);
-    }
-
-    function prevModel() {
-        currentIndex = (currentIndex - 1 + modelUrls.length) % modelUrls.length; // Treci la modelul precedent
-        loadModel(currentIndex);
-    }
-
-    document.getElementById('swipe-container').addEventListener('touchstart', handleTouchStart, false);        
-    document.getElementById('swipe-container').addEventListener('touchmove', handleTouchMove, false);
-
-    let x1 = null;
-    let y1 = null;
-
-    function handleTouchStart(evt) {
-        const firstTouch = evt.touches[0];                                      
-        x1 = firstTouch.clientX;                                      
-        y1 = firstTouch.clientY;                                      
-    };                                                
-
-    function handleTouchMove(evt) {
-        if (!x1 || !y1) {
-            return false;
+    document.getElementById('next-button').addEventListener('click', function() {
+        if (currentModel < models.length - 1) {
+            changeModel(currentModel + 1);
         }
+    });
 
-        let x2 = evt.touches[0].clientX;
-        let y2 = evt.touches[0].clientY;
-
-        let xDiff = x2 - x1;
-        let yDiff = y2 - y1;
-
-        if (Math.abs(xDiff) > Math.abs(yDiff)) {/*most significant*/
-            if (xDiff > 0) {
-                prevModel(); /* swipe right */
-            } else {
-                nextModel(); /* swipe left */
-            }                       
-        } 
-        /* reset values */
-        x1 = null;
-        y1 = null;                                             
-    };
-
-    loadModel(currentIndex); // Încarcă primul model la încărcarea paginii
+    document.getElementById('prev-button').addEventListener('click', function() {
+        if (currentModel > 0) {
+            changeModel(currentModel - 1);
+        }
+    });
+});
 </script>
 </body>

@@ -28,7 +28,7 @@
             width: 200px;
             height: 280px;
             border: none;
-            border-radius: 50%
+            border-radius: 10%
             margin-bottom: 10px; /* Space between models */
         }
         .navigation {

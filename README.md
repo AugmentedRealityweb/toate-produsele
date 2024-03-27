@@ -1,11 +1,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navigare Modele 3D</title>
+    <title>Swipe între seturi de Modele 3D</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            background-image: url('fundal.jpg'); /* Aici adaugi imaginea ta de fundal */
+            background-size: cover;
+            background-position: center;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -14,30 +16,31 @@
         }
         .swipe-container {
             display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
+            justify-content: space-between;
+            width: 420px; /* Modificat pentru a găzdui două iframe-uri */
+            position: relative;
         }
         iframe {
-            width: 200px;
-            height: 240px;
+            width: 200px; /* Lățimea unui iframe */
+            height: 240px; /* Înălțimea iframe-ului */
             border: none;
-            border-radius: 10px;
+            margin: 10px; /* Adaugă spațiu între modele */
         }
         .navigation {
             display: flex;
             justify-content: space-between;
             position: absolute;
             top: 50%;
-            left: 0;
             width: 100%;
             transform: translateY(-50%);
         }
         .nav-button {
-            background: none;
-            border: none;
+            background: #fff; /* Schimbat pentru vizibilitate */
+            border: 1px solid #ccc; /* Adaugă un contur butonului */
+            border-radius: 50%; /* Buton circular */
             font-size: 24px;
             cursor: pointer;
+            opacity: 0.8;
         }
     </style>
 </head>
@@ -52,38 +55,43 @@
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-    let currentGroupIndex = 0;
-    const modelGroups = [
+    let currentSet = 0;
+    const models = [
         ["https://augmentedrealityweb.github.io/AF1/index.html", "https://augmentedrealityweb.github.io/Chanel/index.html"],
         ["https://augmentedrealityweb.github.io/Guler-Cervical/index.html", "https://augmentedrealityweb.github.io/Jordan/index.html"],
         ["https://augmentedrealityweb.github.io/Scaun-Ikea/index.html", "https://augmentedrealityweb.github.io/Nike/index.html"]
     ];
     const swipeContainer = document.getElementById('swipe-container');
 
-    function loadModelGroup(groupIndex) {
-        swipeContainer.innerHTML = ''; // Clear the container
-        modelGroups[groupIndex].forEach(modelUrl => {
+    function loadModels(setIndex) {
+        swipeContainer.innerHTML = ''; // Curăță containerul pentru noile modele
+        models[setIndex].forEach(modelUrl => {
             const iframe = document.createElement('iframe');
             iframe.src = modelUrl;
             swipeContainer.appendChild(iframe);
         });
+        // Readaugă butoanele de navigație
+        swipeContainer.innerHTML += '<div class="navigation"><button class="nav-button" id="prev-button">&#10094;</button><button class="nav-button" id="next-button">&#10095;</button></div>';
+        addNavigationListeners(); // Reinițializează ascultătorii pentru butoane
     }
 
-    loadModelGroup(currentGroupIndex); // Load the first group initially
+    function addNavigationListeners() {
+        document.getElementById('next-button').addEventListener('click', function() {
+            if (currentSet < models.length - 1) {
+                currentSet++;
+                loadModels(currentSet);
+            }
+        });
 
-    document.getElementById('next-button').addEventListener('click', function() {
-        if (currentGroupIndex < modelGroups.length - 1) {
-            currentGroupIndex++;
-            loadModelGroup(currentGroupIndex);
-        }
-    });
+        document.getElementById('prev-button').addEventListener('click', function() {
+            if (currentSet > 0) {
+                currentSet--;
+                loadModels(currentSet);
+            }
+        });
+    }
 
-    document.getElementById('prev-button').addEventListener('click', function() {
-        if (currentGroupIndex > 0) {
-            currentGroupIndex--;
-            loadModelGroup(currentGroupIndex);
-        }
-    });
+    loadModels(currentSet); // Încarcă primul set de modele
 });
 </script>
 </body>

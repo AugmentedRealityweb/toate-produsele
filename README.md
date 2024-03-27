@@ -35,7 +35,7 @@
             display: flex;
             justify-content: space-between;
             position: absolute;
-            top: calc(50% - 10px);
+            top: calc(50% - 30px);
             width: 100%;
             transform: translateY(-50%);
         }

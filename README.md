@@ -26,20 +26,12 @@
     margin-left: 17px;
         }
         iframe {
-    width: 200px; /* Lățimea implicită pentru dispozitive mobile */
-    height: 240px; /* Înălțimea implicită pentru dispozitive mobile */
-    border: none;
-    border-radius: 30%;
-    margin-bottom: 60px; /* Spațiu între modele */
-}
-
-/* Media query pentru ecranele mai largi de 768px */
-@media (min-width: 768px) {
-    iframe {
-        width: 400px; /* Lățimea mai mare pentru laptopuri/desktopuri */
-        height: 480px; /* Înălțimea mai mare pentru laptopuri/desktopuri */
-    }
-}
+            width: 200px;
+            height: 240px;
+            border: none;
+            border-radius: 30%;
+            margin-bottom: 60px; /* Space between models */
+        }
         .navigation {
             display: flex;
             justify-content: space-between;

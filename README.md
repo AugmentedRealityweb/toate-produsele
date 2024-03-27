@@ -26,7 +26,7 @@
         }
         iframe {
             width: 200px;
-            height: 230px;
+            height: 280px;
             border: none;
             border-radius: 50%
             margin-bottom: 10px; /* Space between models */

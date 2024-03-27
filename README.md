@@ -1,7 +1,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Swipe pentru Modele 3D</title>
+    <title>Navigare Modele 3D</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -13,16 +13,16 @@
             margin: 0;
         }
         .swipe-container {
-            width: 200px; /* Lățimea iframe-ului */
-            height: 240px; /* Înălțimea iframe-ului */
-            position: relative;
-            overflow: hidden;
-            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
         }
         iframe {
-            width: 100%;
-            height: 100%;
+            width: 200px;
+            height: 240px;
             border: none;
+            border-radius: 10px;
         }
         .navigation {
             display: flex;
@@ -52,34 +52,36 @@
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-    let currentModel = 0;
-    const models = [
-        "https://augmentedrealityweb.github.io/AF1/index.html",
-        "https://augmentedrealityweb.github.io/Chanel/index.html",
-        "https://augmentedrealityweb.github.io/Guler-Cervical/index.html",
-        "https://augmentedrealityweb.github.io/Jordan/index.html",
-        "https://augmentedrealityweb.github.io/Scaun-Ikea/index.html",
-        "https://augmentedrealityweb.github.io/Nike/index.html"
+    let currentGroupIndex = 0;
+    const modelGroups = [
+        ["https://augmentedrealityweb.github.io/AF1/index.html", "https://augmentedrealityweb.github.io/Chanel/index.html"],
+        ["https://augmentedrealityweb.github.io/Guler-Cervical/index.html", "https://augmentedrealityweb.github.io/Jordan/index.html"],
+        ["https://augmentedrealityweb.github.io/Scaun-Ikea/index.html", "https://augmentedrealityweb.github.io/Nike/index.html"]
     ];
     const swipeContainer = document.getElementById('swipe-container');
-    const iframe = document.createElement('iframe');
-    iframe.src = models[currentModel];
-    swipeContainer.appendChild(iframe);
 
-    function changeModel(newIndex) {
-        currentModel = newIndex;
-        iframe.src = models[currentModel];
+    function loadModelGroup(groupIndex) {
+        swipeContainer.innerHTML = ''; // Clear the container
+        modelGroups[groupIndex].forEach(modelUrl => {
+            const iframe = document.createElement('iframe');
+            iframe.src = modelUrl;
+            swipeContainer.appendChild(iframe);
+        });
     }
 
+    loadModelGroup(currentGroupIndex); // Load the first group initially
+
     document.getElementById('next-button').addEventListener('click', function() {
-        if (currentModel < models.length - 1) {
-            changeModel(currentModel + 1);
+        if (currentGroupIndex < modelGroups.length - 1) {
+            currentGroupIndex++;
+            loadModelGroup(currentGroupIndex);
         }
     });
 
     document.getElementById('prev-button').addEventListener('click', function() {
-        if (currentModel > 0) {
-            changeModel(currentModel - 1);
+        if (currentGroupIndex > 0) {
+            currentGroupIndex--;
+            loadModelGroup(currentGroupIndex);
         }
     });
 });

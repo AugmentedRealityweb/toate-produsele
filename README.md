@@ -26,8 +26,9 @@
         }
         iframe {
             width: 200px;
-            height: 240px;
+            height: 230px;
             border: none;
+            border-radius: 50%
             margin-bottom: 10px; /* Space between models */
         }
         .navigation {

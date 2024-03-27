@@ -20,44 +20,61 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: space-around;
-            max-width: 660px; /* Ajustează această lățime în funcție de spațiul necesar pentru trei modele pe rând */
+            flex-direction: column; /* O coloană cu mai multe rânduri */
+            max-height: 720px; /* Ajustează în funcție de înălțimea totală dorită */
+        }
+        .model-row {
+            display: flex;
+            justify-content: center; /* Ajustează pentru a centra modelele pe orizontală */
+            margin-bottom: 20px; /* Distanța între rânduri */
         }
         .model {
-            margin: 10px;
+            margin: 0 10px; /* Spațiere între modele */
             text-align: center;
         }
         .model-name {
-            margin-top: 5px;
             color: white;
+            margin-top: 5px;
         }
     </style>
 </head>
 <body>
 
 <div class="models-container">
-    <div class="model">
-        <iframe src="https://augmentedrealityweb.github.io/AF1/index.html" width="200" height="240" style="overflow: hidden; border: none; transform: scale(1); transform-origin: 0 0; border-radius: 80px;"></iframe>
-        <div class="model-name">AirForce1</div>
+    <!-- Primul rând -->
+    <div class="model-row">
+        <div class="model">
+            <iframe src="https://augmentedrealityweb.github.io/AF1/index.html" width="200" height="240" style="border: none; border-radius: 80px;"></iframe>
+            <div class="model-name">AirForce1</div>
+        </div>
+        <div class="model">
+            <iframe src="https://augmentedrealityweb.github.io/Chanel/index.html" width="200" height="240" style="border: none; border-radius: 80px;"></iframe>
+            <div class="model-name">Poșetă Chanel</div>
+        </div>
     </div>
-    <div class="model">
-        <iframe src="https://augmentedrealityweb.github.io/Chanel/index.html" width="200" height="240" style="overflow: hidden; border: none; transform: scale(1); transform-origin: 0 0; border-radius: 80px;"></iframe>
-        <div class="model-name">Poșetă Chanel</div>
+    
+    <!-- Al doilea rând -->
+    <div class="model-row">
+        <div class="model">
+            <iframe src="https://augmentedrealityweb.github.io/Guler-Cervical/index.html" width="200" height="240" style="border: none; border-radius: 80px;"></iframe>
+            <div class="model-name">Guler Cervical</div>
+        </div>
+        <div class="model">
+            <iframe src="https://augmentedrealityweb.github.io/Jordan/index.html" width="200" height="240" style="border: none; border-radius: 80px;"></iframe>
+            <div class="model-name">AirJordan</div>
+        </div>
     </div>
-    <div class="model">
-        <iframe src="https://augmentedrealityweb.github.io/Guler-Cervical/index.html" width="200" height="240" style="overflow: hidden; border: none; transform: scale(1); transform-origin: 0 0; border-radius: 80px;"></iframe>
-        <div class="model-name">Guler Cervical</div>
-    </div>
-    <div class="model">
-        <iframe src="https://augmentedrealityweb.github.io/Jordan/index.html" width="200" height="240" style="overflow: hidden; border: none; transform: scale(1); transform-origin: 0 0; border-radius: 80px;"></iframe>
-        <div class="model-name">AirJordan</div>
-    </div>
-    <div class="model">
-        <iframe src="https://augmentedrealityweb.github.io/Scaun-Ikea/index.html" width="200" height="240" style="overflow: hidden; border: none; transform: scale(1); transform-origin: 0 0; border-radius: 80px;"></iframe>
-        <div class="model-name">Scaun Ikea</div>
-    </div>
-    <div class="model">
-        <iframe src="https://augmentedrealityweb.github.io/Nike/index.html" width="200" height="240" style="overflow: hidden; border: none; transform: scale(1); transform-origin: 0 0; border-radius: 80px;"></iframe>
-        <div class="model-name">Nike Metcon 4</div>
+    
+    <!-- Al treilea rând -->
+    <div class="model-row">
+        <div class="model">
+            <iframe src="https://augmentedrealityweb.github.io/Scaun-Ikea/index.html" width="200" height="240" style="border: none; border-radius: 80px;"></iframe>
+            <div class="model-name">Scaun Ikea</div>
+        </div>
+        <div class="model">
+            <iframe src="https://augmentedrealityweb.github.io/Nike/index.html" width="200" height="240" style="border: none; border-radius: 80px;"></iframe>
+            <div class="model-name">Nike Metcon 4</div>
+        </div>
     </div>
 </div>
 </body>

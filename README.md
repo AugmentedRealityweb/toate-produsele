@@ -23,7 +23,7 @@
     width: 200px; /* Adjust this as needed */
     overflow: hidden;
     position: relative;
-    margin-left: 20px;
+    margin-left: 17px;
         }
         iframe {
             width: 200px;

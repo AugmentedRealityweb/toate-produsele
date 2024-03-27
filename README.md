@@ -26,10 +26,10 @@
         }
         iframe {
             width: 200px;
-            height: 280px;
+            height: 240px;
             border: none;
             border-radius: 10%
-            margin-bottom: 10px; /* Space between models */
+            margin-bottom: 50px; /* Space between models */
         }
         .navigation {
             display: flex;

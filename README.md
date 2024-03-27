@@ -28,8 +28,8 @@
             width: 200px;
             height: 240px;
             border: none;
-            border-radius: 10%
-            margin-bottom: 50px; /* Space between models */
+            border-radius: 20%;
+            margin-bottom: 70px; /* Space between models */
         }
         .navigation {
             display: flex;

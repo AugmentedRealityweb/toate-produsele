@@ -41,25 +41,46 @@
     document.addEventListener("DOMContentLoaded", function() {
         const models = document.querySelectorAll('.model');
 
+        function deactivateAllModels() {
+            models.forEach(model => {
+                const iframe = model.querySelector('iframe');
+                if (iframe) {
+                    // Salvează src într-un atribut de date și elimină src pentru a opri redarea
+                    model.setAttribute('data-active-src', iframe.src);
+                    iframe.src = '';
+                }
+                model.classList.add('inactive');
+            });
+        }
+
         models.forEach(model => {
-            const iframe = document.createElement('iframe');
-            iframe.setAttribute('src', model.getAttribute('data-src'));
-            iframe.style.width = '200px';
-            iframe.style.height = '240px';
-            iframe.style.border = 'none';
-            iframe.style.borderRadius = '80px';
-            iframe.style.transform = 'scale(1)';
-            iframe.style.transformOrigin = '0 0';
-            iframe.style.overflow = 'hidden';
-            model.appendChild(iframe);
             model.addEventListener('click', function() {
-                models.forEach(mod => mod.classList.add('inactive'));
+                deactivateAllModels();
+                
+                // Creați sau actualizați iframe-ul numai pentru modelul activat
+                let iframe = model.querySelector('iframe');
+                if (!iframe) {
+                    iframe = document.createElement('iframe');
+                    iframe.style.width = '200px';
+                    iframe.style.height = '240px';
+                    iframe.style.border = 'none';
+                    iframe.style.borderRadius = '80px';
+                    iframe.style.transform = 'scale(1)';
+                    iframe.style.transformOrigin = '0 0';
+                    iframe.style.overflow = 'hidden';
+                    model.appendChild(iframe);
+                }
+                // Setează src din atributul de date pentru a reactiva redarea
+                iframe.src = model.getAttribute('data-active-src') || model.getAttribute('data-src');
+                
                 model.classList.remove('inactive');
             });
         });
 
-        // Set the first model as active initially
-        models[0].classList.remove('inactive');
+        // Inițial, dezactivează toate modelele
+        deactivateAllModels();
+        // Activează primul model
+        models[0].click();
     });
 </script>
 </body>

@@ -17,13 +17,13 @@
             background-position: center;
         }
         .swipe-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 200px; /* Adjust this as needed */
-    overflow: hidden;
-    position: relative;
-    margin-left: 17px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 200px; /* Adjust this as needed */
+            overflow: hidden;
+            position: relative;
+            margin-left: 17px;
         }
         iframe {
             width: 200px;
@@ -124,7 +124,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
     loadModels(currentSet); // Initial load of models
 });
-
 </script>
+
+<!-- Fastbots AI Chatbot Integration -->
+<script defer src="https://app.fastbots.ai/embed.js" data-bot-id="clvh50hmk0131r9bci25mxis8"></script>
+
 </body>
 </html>

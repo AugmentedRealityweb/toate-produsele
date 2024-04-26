@@ -124,7 +124,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     loadModels(currentSet); // Initial load of models
 });
-    <script defer src="https://app.fastbots.ai/embed.js" data-bot-id="clvh50hmk0131r9bci25mxis8"></script>
+    <iframe	style="width: 400px; height: 600px;" src="https://app.fastbots.ai/embed/clvh50hmk0131r9bci25mxis8"></iframe>
 </script>
 </body>
 </html>

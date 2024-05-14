@@ -124,18 +124,30 @@ document.addEventListener("DOMContentLoaded", function() {
     loadModels(currentSet); // Initial load of models
 });
 </script>
-<!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/6642c35007f59932ab3f3bad/1htqo4v9u';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
+<link rel="stylesheet" href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
+<script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
+<df-messenger
+  location="us-central1"
+  project-id="chatbot1-423313"
+  agent-id="424ce989-13fd-4586-b686-d897ab744422"
+  language-code="ro"
+  max-query-length="-1">
+  <df-messenger-chat-bubble
+   chat-title="">
+  </df-messenger-chat-bubble>
+</df-messenger>
+<style>
+  df-messenger {
+    z-index: 999;
+    position: fixed;
+    --df-messenger-font-color: #000;
+    --df-messenger-font-family: Google Sans;
+    --df-messenger-chat-background: #f3f6fc;
+    --df-messenger-message-user-background: #d3e3fd;
+    --df-messenger-message-bot-background: #fff;
+    bottom: 16px;
+    right: 16px;
+  }
+</style>
 </body>
 </html>

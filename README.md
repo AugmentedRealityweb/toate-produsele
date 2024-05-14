@@ -121,7 +121,6 @@ document.addEventListener("DOMContentLoaded", function() {
             loadModels(currentSet);
         });
     }
-
     loadModels(currentSet); // Initial load of models
 });
 </script>

@@ -124,9 +124,6 @@ document.addEventListener("DOMContentLoaded", function() {
     loadModels(currentSet); // Initial load of models
 });
 </script>
-
-<!-- Fastbots AI Chatbot Integration -->
-<script defer src="https://app.fastbots.ai/embed.js" data-bot-id="clvh50hmk0131r9bci25mxis8"></script>
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();

@@ -180,7 +180,7 @@ async function sendMessage() {
     });
     const data = await response.json();
     document.getElementById('chatbox').innerHTML += `<div class="message user-message"><p>${userInput}</p></div>`;
-    document.getElementById('chatbox').innerHTML += `<div class="message bot-message"><p>${data.response}</p></div>`;
+    document.getElementById('chatbox').innerHTML += `<div class="message bot-message"><p>${data.fulfillmentText}</p></div>`;
     document.getElementById('userInput').value = '';
     document.getElementById('chatbox').scrollTop = document.getElementById('chatbox').scrollHeight;
 }

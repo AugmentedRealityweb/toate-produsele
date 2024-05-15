@@ -54,18 +54,17 @@
         .nav-button:hover {
             opacity: 1;
         }
-        #chat-container {
-            width: 200px; /* Reduced width */
-            height: 300px; /* Reduced height */
+        #chatbot-iframe {
+            width: 300px; /* Adjust as needed */
+            height: 400px; /* Adjust as needed */
             position: fixed;
             bottom: 10px;
             right: 10px;
-            border: 1px solid #ccc;
+            border: none;
             border-radius: 10px;
-            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
     </style>
-    <script defer src="https://openai-widget.web.app/ChatComponent.bundle.js"></script>
 </head>
 <body>
 
@@ -136,26 +135,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 </script>
 
-<div id="chat-container"></div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Verifică dacă containerul de chat există
-    var chatContainer = document.getElementById('chat-container');
-    // Dacă containerul de chat nu există, creează-l
-    if (!chatContainer) {
-        chatContainer = document.createElement('div');
-        chatContainer.id = 'chat-container';
-        document.body.appendChild(chatContainer);
-    }
-    // Inițializează componenta Chat
-    if (window.ChatComponent) {
-        ChatComponent.init('2mcfi6tJjQtthDmjXRUL', '#chat-container');
-    } else {
-        console.error('ChatComponent is not available');
-    }
-});
-</script>
+<iframe id="chatbot-iframe" src="https://widget-prototype.web.app/?id=2mcfi6tJjQtthDmjXRUL"></iframe>
 
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Swipe pentru Modele 3D</title>
+    <title>Chatbot și Modele 3D</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -16,12 +16,13 @@
             background-image: url('fundal13.jpg');
             background-size: cover;
             background-position: center;
+            flex-direction: column;
         }
         .swipe-container {
             display: flex;
             flex-direction: column;
             align-items: center;
-            width: 200px;
+            width: 200px; /* Adjust this as needed */
             overflow: hidden;
             position: relative;
             margin-left: 17px;
@@ -31,7 +32,7 @@
             height: 240px;
             border: none;
             border-radius: 30%;
-            margin-bottom: 60px;
+            margin-bottom: 60px; /* Space between models */
         }
         .navigation {
             display: flex;
@@ -42,7 +43,7 @@
             transform: translateY(-50%);
         }
         .nav-button {
-            background-color: #007BFF;
+            background-color: #007BFF; /* Bootstrap primary color for reference */
             color: white;
             border: none;
             border-radius: 50%;
@@ -63,11 +64,38 @@
             overflow-y: scroll;
             background-color: white;
             margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
         #userInput {
-            width: 100%;
+            width: calc(100% - 20px);
             padding: 10px;
             margin-top: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .message {
+            margin: 10px 0;
+        }
+        .user-message {
+            text-align: right;
+        }
+        .bot-message {
+            text-align: left;
+        }
+        .message p {
+            display: inline-block;
+            padding: 10px;
+            border-radius: 10px;
+            max-width: 80%;
+        }
+        .user-message p {
+            background-color: #007BFF;
+            color: white;
+        }
+        .bot-message p {
+            background-color: #f1f1f1;
+            color: black;
         }
     </style>
 </head>
@@ -123,12 +151,20 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // Event listeners for buttons
         nextButton.addEventListener('click', function() {
-            currentSet = (currentSet + 1) % models.length;
+            if (currentSet === models.length - 1) {
+                currentSet = 0; // Reset to the first set of models if at the end
+            } else {
+                currentSet++; // Otherwise, increment to the next set
+            }
             loadModels(currentSet);
         });
 
         prevButton.addEventListener('click', function() {
-            currentSet = (currentSet - 1 + models.length) % models.length;
+            if (currentSet === 0) {
+                currentSet = models.length - 1; // Go to the last set of models if at the beginning
+            } else {
+                currentSet--; // Otherwise, decrement to the previous set
+            }
             loadModels(currentSet);
         });
     }
@@ -143,9 +179,10 @@ async function sendMessage() {
         body: JSON.stringify({ message: userInput })
     });
     const data = await response.json();
-    document.getElementById('chatbox').innerHTML += `<p><strong>You:</strong> ${userInput}</p>`;
-    document.getElementById('chatbox').innerHTML += `<p><strong>Bot:</strong> ${data.response}</p>`;
+    document.getElementById('chatbox').innerHTML += `<div class="message user-message"><p>${userInput}</p></div>`;
+    document.getElementById('chatbox').innerHTML += `<div class="message bot-message"><p>${data.response}</p></div>`;
     document.getElementById('userInput').value = '';
+    document.getElementById('chatbox').scrollTop = document.getElementById('chatbox').scrollHeight;
 }
 </script>
 </body>

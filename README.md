@@ -1,9 +1,8 @@
-<!DOCTYPE html>
 <html lang="ro">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Swipe pentru Modele 3D</title>
+    <title>Swipe pentru Modele 3D și Chatbot</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -16,6 +15,7 @@
             background-image: url('fundal13.jpg');
             background-size: cover;
             background-position: center;
+            flex-direction: column;
         }
         .swipe-container {
             display: flex;
@@ -55,7 +55,18 @@
         .nav-button:hover {
             opacity: 1;
         }
+        #chat-container {
+            width: 33.33%; /* Aproximativ de 3 ori mai mic */
+            height: 33.33%; /* Aproximativ de 3 ori mai mic */
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            overflow: hidden;
+        }
     </style>
+    <script defer src="https://openai-widget.web.app/ChatComponent.bundle.js"></script>
 </head>
 <body>
 
@@ -126,44 +137,18 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 </script>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chatbot</title>
-    <style>
-        #chat-container {
-            width: 33.33%; /* Aproximativ de 3 ori mai mic */
-            height: 33.33%; /* Aproximativ de 3 ori mai mic */
-            position: fixed;
-            bottom: 10px;
-            right: 10px;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-    </style>
-    <script defer src="https://openai-widget.web.app/ChatComponent.bundle.js"></script>
-</head>
-<body>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Verifică dacă containerul de chat există
-            var chatContainer = document.getElementById('chat-container');
-            // Dacă containerul de chat nu există, creează-l
-            if (!chatContainer) {
-                chatContainer = document.createElement('div');
-                chatContainer.id = 'chat-container';
-                document.body.appendChild(chatContainer);
-            }
-            // Inițializează componenta Chat
-            if (window.ChatComponent) {
-                ChatComponent.init('2mcfi6tJjQtthDmjXRUL', '#chat-container');
-            } else {
-                console.error('ChatComponent is not available');
-            }
-        });
-    </script>
-</body>
-</html>
+<div id="chat-container"></div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize the Chat component
+    if (window.ChatComponent) {
+        ChatComponent.init('2mcfi6tJjQtthDmjXRUL', '#chat-container');
+    } else {
+        console.error('ChatComponent is not available');
+    }
+});
+</script>
+
 </body>
 </html>

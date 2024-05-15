@@ -55,8 +55,8 @@
             opacity: 1;
         }
         #chatbot-iframe {
-            width: 300px; /* Adjust as needed */
-            height: 400px; /* Adjust as needed */
+            width: 350px; /* Adjust as needed */
+            height: 500px; /* Adjust as needed */
             position: fixed;
             bottom: 10px;
             right: 10px;

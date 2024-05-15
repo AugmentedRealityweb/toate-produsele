@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chatbot și Modele 3D</title>
+    <title>Swipe pentru Modele 3D</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -16,7 +16,6 @@
             background-image: url('fundal13.jpg');
             background-size: cover;
             background-position: center;
-            flex-direction: column;
         }
         .swipe-container {
             display: flex;
@@ -56,47 +55,6 @@
         .nav-button:hover {
             opacity: 1;
         }
-        #chatbox {
-            width: 300px;
-            height: 400px;
-            border: 1px solid #ccc;
-            padding: 10px;
-            overflow-y: scroll;
-            background-color: white;
-            margin-top: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        #userInput {
-            width: calc(100% - 20px);
-            padding: 10px;
-            margin-top: 10px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-        }
-        .message {
-            margin: 10px 0;
-        }
-        .user-message {
-            text-align: right;
-        }
-        .bot-message {
-            text-align: left;
-        }
-        .message p {
-            display: inline-block;
-            padding: 10px;
-            border-radius: 10px;
-            max-width: 80%;
-        }
-        .user-message p {
-            background-color: #007BFF;
-            color: white;
-        }
-        .bot-message p {
-            background-color: #f1f1f1;
-            color: black;
-        }
     </style>
 </head>
 <body>
@@ -107,10 +65,6 @@
         <button class="nav-button" id="next-button">&#10095;</button>
     </div>
 </div>
-
-<div id="chatbox"></div>
-<input type="text" id="userInput" placeholder="Type your message here..." />
-<button onclick="sendMessage()">Send</button>
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
@@ -170,20 +124,46 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     loadModels(currentSet); // Initial load of models
 });
-
-async function sendMessage() {
-    const userInput = document.getElementById('userInput').value;
-    const response = await fetch('https://7a33e74f-aec9-4287-b712-b754d5384964-00-2qz0sbny3vwzg.kirk.replit.dev/webhook', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: userInput })
-    });
-    const data = await response.json();
-    document.getElementById('chatbox').innerHTML += `<div class="message user-message"><p>${userInput}</p></div>`;
-    document.getElementById('chatbox').innerHTML += `<div class="message bot-message"><p>${data.fulfillmentText}</p></div>`;
-    document.getElementById('userInput').value = '';
-    document.getElementById('chatbox').scrollTop = document.getElementById('chatbox').scrollHeight;
-}
 </script>
+
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <style>
+        #chatbox {
+            width: 300px;
+            height: 400px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            overflow-y: scroll;
+        }
+        #userInput {
+            width: 100%;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="chatbox"></div>
+    <input type="text" id="userInput" placeholder="Type your message here..." />
+    <button onclick="sendMessage()">Send</button>
+
+    <script>
+        async function sendMessage() {
+            const userInput = document.getElementById('userInput').value;
+            const response = await fetch('https://7a33e74f-aec9-4287-b712-b754d5384964-00-2qz0sbny3vwzg.kirk.replit.dev/webhook', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ message: userInput })
+            });
+            const data = await response.json();
+            document.getElementById('chatbox').innerHTML += `<p><strong>You:</strong> ${userInput}</p>`;
+            document.getElementById('chatbox').innerHTML += `<p><strong>Bot:</strong> ${data.response}</p>`;
+            document.getElementById('userInput').value = '';
+        }
+    </script>
 </body>
 </html>

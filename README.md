@@ -56,14 +56,15 @@
             opacity: 1;
         }
         #chat-container {
-            width: 33.33%; /* Aproximativ de 3 ori mai mic */
-            height: 33.33%; /* Aproximativ de 3 ori mai mic */
+            width: 150px; /* Aproximativ de 3 ori mai mic */
+            height: 200px; /* Aproximativ de 3 ori mai mic */
             position: fixed;
             bottom: 10px;
             right: 10px;
             border: 1px solid #ccc;
             border-radius: 10px;
             overflow: hidden;
+            background-color: white; /* Fundal alb pentru a fi vizibil */
         }
     </style>
     <script defer src="https://openai-widget.web.app/ChatComponent.bundle.js"></script>

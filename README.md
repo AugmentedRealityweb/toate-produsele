@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="ro">
 <head>
     <meta charset="UTF-8">
@@ -20,7 +21,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            width: 200px; /* Adjust this as needed */
+            width: 200px;
             overflow: hidden;
             position: relative;
             margin-left: 17px;
@@ -30,7 +31,7 @@
             height: 240px;
             border: none;
             border-radius: 30%;
-            margin-bottom: 60px; /* Space between models */
+            margin-bottom: 60px;
         }
         .navigation {
             display: flex;
@@ -41,7 +42,7 @@
             transform: translateY(-50%);
         }
         .nav-button {
-            background-color: #007BFF; /* Bootstrap primary color for reference */
+            background-color: #007BFF;
             color: white;
             border: none;
             border-radius: 50%;
@@ -54,6 +55,20 @@
         .nav-button:hover {
             opacity: 1;
         }
+        #chatbox {
+            width: 300px;
+            height: 400px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            overflow-y: scroll;
+            background-color: white;
+            margin-top: 20px;
+        }
+        #userInput {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
@@ -64,6 +79,10 @@
         <button class="nav-button" id="next-button">&#10095;</button>
     </div>
 </div>
+
+<div id="chatbox"></div>
+<input type="text" id="userInput" placeholder="Type your message here..." />
+<button onclick="sendMessage()">Send</button>
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
@@ -104,50 +123,30 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // Event listeners for buttons
         nextButton.addEventListener('click', function() {
-            if (currentSet === models.length - 1) {
-                currentSet = 0; // Reset to the first set of models if at the end
-            } else {
-                currentSet++; // Otherwise, increment to the next set
-            }
+            currentSet = (currentSet + 1) % models.length;
             loadModels(currentSet);
         });
 
         prevButton.addEventListener('click', function() {
-            if (currentSet === 0) {
-                currentSet = models.length - 1; // Go to the last set of models if at the beginning
-            } else {
-                currentSet--; // Otherwise, decrement to the previous set
-            }
+            currentSet = (currentSet - 1 + models.length) % models.length;
             loadModels(currentSet);
         });
     }
     loadModels(currentSet); // Initial load of models
 });
+
+async function sendMessage() {
+    const userInput = document.getElementById('userInput').value;
+    const response = await fetch('https://7a33e74f-aec9-4287-b712-b754d5384964-00-2qz0sbny3vwzg.kirk.replit.dev/webhook', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: userInput })
+    });
+    const data = await response.json();
+    document.getElementById('chatbox').innerHTML += `<p><strong>You:</strong> ${userInput}</p>`;
+    document.getElementById('chatbox').innerHTML += `<p><strong>Bot:</strong> ${data.response}</p>`;
+    document.getElementById('userInput').value = '';
+}
 </script>
-<link rel="stylesheet" href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
-<script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
-<df-messenger
-  location="us-central1"
-  project-id="chatbot1-423313"
-  agent-id="424ce989-13fd-4586-b686-d897ab744422"
-  language-code="ro"
-  max-query-length="-1">
-  <df-messenger-chat-bubble
-   chat-title="">
-  </df-messenger-chat-bubble>
-</df-messenger>
-<style>
-  df-messenger {
-    z-index: 999;
-    position: fixed;
-    --df-messenger-font-color: #000;
-    --df-messenger-font-family: Google Sans;
-    --df-messenger-chat-background: #f3f6fc;
-    --df-messenger-message-user-background: #d3e3fd;
-    --df-messenger-message-bot-background: #fff;
-    bottom: 16px;
-    right: 16px;
-  }
-</style>
 </body>
 </html>

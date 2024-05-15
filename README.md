@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Swipe pentru Modele 3D și Chatbot</title>
+    <title>Swipe pentru Modele 3D</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -15,7 +15,6 @@
             background-image: url('fundal13.jpg');
             background-size: cover;
             background-position: center;
-            flex-direction: column;
         }
         .swipe-container {
             display: flex;
@@ -56,15 +55,14 @@
             opacity: 1;
         }
         #chat-container {
-            width: 150px; /* Aproximativ de 3 ori mai mic */
-            height: 200px; /* Aproximativ de 3 ori mai mic */
+            width: 200px; /* Reduced width */
+            height: 300px; /* Reduced height */
             position: fixed;
             bottom: 10px;
             right: 10px;
             border: 1px solid #ccc;
             border-radius: 10px;
             overflow: hidden;
-            background-color: white; /* Fundal alb pentru a fi vizibil */
         }
     </style>
     <script defer src="https://openai-widget.web.app/ChatComponent.bundle.js"></script>
@@ -142,7 +140,15 @@ document.addEventListener("DOMContentLoaded", function() {
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize the Chat component
+    // Verifică dacă containerul de chat există
+    var chatContainer = document.getElementById('chat-container');
+    // Dacă containerul de chat nu există, creează-l
+    if (!chatContainer) {
+        chatContainer = document.createElement('div');
+        chatContainer.id = 'chat-container';
+        document.body.appendChild(chatContainer);
+    }
+    // Inițializează componenta Chat
     if (window.ChatComponent) {
         ChatComponent.init('2mcfi6tJjQtthDmjXRUL', '#chat-container');
     } else {

@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="ro">
 <head>
     <meta charset="UTF-8">
@@ -54,15 +55,56 @@
         .nav-button:hover {
             opacity: 1;
         }
-        #chatbot-iframe {
+        .chat-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
             width: 350px; /* Adjust as needed */
             height: 500px; /* Adjust as needed */
-            position: fixed;
-            bottom: 10px;
-            right: 10px;
+            border: 2px solid #0078d7;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            background-color: #ffffff;
+        }
+        .chat-widget-header {
+            background-color: #0078d7;
+            color: #ffffff;
+            padding: 10px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .chat-widget-body {
+            flex: 1;
+            padding: 10px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+        }
+        .chat-widget-input {
+            display: flex;
+            border-top: 1px solid #ddd;
+            padding: 10px;
+        }
+        .chat-widget-input input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .chat-widget-input button {
+            padding: 10px 15px;
+            margin-left: 10px;
             border: none;
-            border-radius: 20px;
-            box-shadow: 0 0 0px rgba(0, 0, 0, 0.1);
+            background-color: #0078d7;
+            color: #ffffff;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
         }
     </style>
 </head>
@@ -72,6 +114,17 @@
     <div class="navigation">
         <button class="nav-button" id="prev-button">&#10094;</button>
         <button class="nav-button" id="next-button">&#10095;</button>
+    </div>
+</div>
+
+<div class="chat-widget">
+    <div class="chat-widget-header">Chat with Us</div>
+    <div class="chat-widget-body" id="chat-widget-body">
+        <!-- Messages will be displayed here -->
+    </div>
+    <div class="chat-widget-input">
+        <input type="text" id="chat-input" placeholder="Type a message...">
+        <button onclick="sendMessage()">Send</button>
     </div>
 </div>
 
@@ -132,10 +185,55 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
     loadModels(currentSet); // Initial load of models
+
+    // Chatbot functionality
+    const chatBody = document.getElementById('chat-widget-body');
+
+    function addMessage(content, sender) {
+        const message = document.createElement('div');
+        message.style.marginBottom = '10px';
+        message.innerHTML = `<strong>${sender}:</strong> ${content}`;
+        chatBody.appendChild(message);
+        chatBody.scrollTop = chatBody.scrollHeight;
+    }
+
+    async function sendMessage() {
+        const input = document.getElementById('chat-input');
+        const message = input.value.trim();
+        if (message === '') return;
+
+        addMessage(message, 'You');
+        input.value = '';
+
+        // Endpoint URL al API-ului OpenAI pentru assistant completions
+        const apiUrl = 'https://api.openai.com/v1/assistants/asst_KDj6DfoROEc3Wn1TeAW3Zbtu/messages';
+
+        // Cheia API OpenAI
+        const apiKey = 'sk-botdetestapi-os1KzH2miGGIKgNvoON3T3BlbkFJlT2nTJbq3PcXh4WMeVvF';
+
+        const response = await fetch(apiUrl, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${apiKey}`
+            },
+            body: JSON.stringify({
+                input: message,
+                vector_store_id: "vs_g4f0PbUB2LOLYFCgB3501D03"
+            }),
+        });
+
+        if (response.ok) {
+            const data = await response.json();
+            const reply = data.message.content.trim();
+            addMessage(reply, 'Bot');
+        } else {
+            const errorText = await response.text();
+            addMessage(`Sorry, something went wrong. ${errorText}`, 'Bot');
+        }
+    }
 });
 </script>
-
-<iframe id="chatbot-iframe" src="https://widget-prototype.web.app/?id=VkAAqkdvmhlRhNXxHDed"></iframe>
 
 </body>
 </html>

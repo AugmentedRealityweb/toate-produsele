@@ -136,6 +136,8 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 
 <iframe id="chatbot-iframe" src="https://widget-prototype.web.app/?id=VkAAqkdvmhlRhNXxHDed"></iframe>
+ <div class="iframe-container">
+        <iframe src="https://chat.openai.com/share/9db20b02-9e16-45a2-98aa-98824212cda3" allowfullscreen></iframe>
 
 </body>
 </html>

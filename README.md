@@ -134,7 +134,6 @@ document.addEventListener("DOMContentLoaded", function() {
     loadModels(currentSet); // Initial load of models
 });
 </script>
- <iframe id="chatbotIframe" src="https://augmentedrealityweb.github.io/Steli/" style="width: 100%; height: 600px; border: none;"></iframe>
 
 </body>
 </html>

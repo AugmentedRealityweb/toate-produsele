@@ -135,18 +135,5 @@ document.addEventListener("DOMContentLoaded", function() {
 });
     
 </script>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Embed Chatbot</title>
-</head>
-<body>
-    <h1>Chatbot Stelmina</h1>
-    <iframe src="https://7e1dba0c-ac20-44e4-8ab0-2f2f6dfeef76-00-1a2td0gzdskz.janeway.replit.dev/" width="100%" height="500px"></iframe>
-</body>
-</html>
-
 </body>
 </html>

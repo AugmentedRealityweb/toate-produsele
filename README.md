@@ -134,41 +134,7 @@ document.addEventListener("DOMContentLoaded", function() {
     loadModels(currentSet); // Initial load of models
 });
 </script>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chatbot Integration</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        #chatbotIframe {
-            width: 100%;
-            height: 600px;
-            border: none;
-        }
-    </style>
-</head>
-<body>
-    <h1>Welcome to Our Website</h1>
-    <p>Below is our integrated chatbot:</p>
-    <iframe id="chatbotIframe" src="https://augmentedrealityweb.github.io/Steli/" style="width: 100%; height: 600px; border: none;"></iframe>
-
-    <script>
-        // Example of postMessage to communicate with the iframe
-        // You can customize this part as per your requirement
-        window.addEventListener("message", function(event) {
-            if (event.origin === "https://augmentedrealityweb.github.io") {
-                console.log("Message received from iframe:", event.data);
-                // Perform actions based on the received message
-            }
-        }, false);
-    </script>
-</body>
-</html>
-
+ <iframe id="chatbotIframe" src="https://augmentedrealityweb.github.io/Steli/" style="width: 100%; height: 600px; border: none;"></iframe>
 
 </body>
 </html>

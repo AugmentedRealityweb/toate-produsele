@@ -14,8 +14,8 @@
             width: 400px;
             height: 600px;
             border: none;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            border-radius: 0px;
+            box-shadow: 0 0px 0px rgba(0, 0, 0, 0.0);
+            border-radius: 10px;
             overflow: hidden;
         }
     </style>

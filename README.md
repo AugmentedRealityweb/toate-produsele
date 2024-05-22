@@ -1,5 +1,41 @@
 <html lang="ro">
 <head>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Site with Chatbot</title>
+    <style>
+        #chatbot-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 400px;
+            height: 600px;
+            border: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var chatContainer = document.createElement('div');
+            chatContainer.id = 'chat-container';
+            var iframe = document.createElement('iframe');
+            iframe.id = 'chatbot-widget';
+            iframe.src = 'https://steli.vercel.app/';
+            chatContainer.appendChild(iframe);
+            document.body.appendChild(chatContainer);
+        });
+    </script>
+</body>
+</html>
+
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Swipe pentru Modele 3D</title>

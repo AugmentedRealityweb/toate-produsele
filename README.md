@@ -1,5 +1,4 @@
 <html lang="ro">
-<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Swipe pentru Modele 3D</title>
@@ -62,8 +61,7 @@
             right: 10px;
             border: none;
             border-radius: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
+            box-shadow: 0 0 0px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
@@ -75,8 +73,6 @@
         <button class="nav-button" id="next-button">&#10095;</button>
     </div>
 </div>
-
-<iframe id="chatbot-iframe" src="https://steli-git-main-vlads-projects-b99bcd8b.vercel.app/" title="Chatbot"></iframe>
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
@@ -136,7 +132,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     loadModels(currentSet); // Initial load of models
 });
+    
 </script>
-
 </body>
 </html>

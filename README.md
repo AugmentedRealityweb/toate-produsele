@@ -76,7 +76,7 @@
     </div>
 </div>
 
-<iframe id="chatbot-iframe" src="https://steli.vercel.app" title="Chatbot"></iframe>
+<iframe id="chatbot-iframe" src="https://steli-git-main-vlads-projects-b99bcd8b.vercel.app/" title="Chatbot"></iframe>
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {

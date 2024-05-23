@@ -67,7 +67,28 @@
     </style>
 </head>
 <body>
- <iframe src="https://steli.vercel.app" title="Chatbot"></iframe>  
+  <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        iframe {
+            width: 400px; /* Ajustează dimensiunile iframe-ului după preferințe */
+            height: 600px; /* Ajustează dimensiunile iframe-ului după preferințe */
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <iframe src="https://steli.vercel.app" title="Chatbot"></iframe>
+</body>  
 <div class="swipe-container" id="swipe-container">
     <div class="navigation">
         <button class="nav-button" id="prev-button">&#10094;</button>

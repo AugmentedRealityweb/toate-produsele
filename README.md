@@ -137,5 +137,4 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 </body>
 </html>
-<!DOCTYPE html>
 

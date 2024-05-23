@@ -133,36 +133,9 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     loadModels(currentSet); // Initial load of models
 });
-    
+ <iframe src="https://steli.vercel.app" title="Chatbot"></iframe>   
 </script>
 </body>
 </html>
 <!DOCTYPE html>
-<html lang="ro">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Embed Chatbot</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            background-color: #f0f0f0;
-        }
-        iframe {
-            width: 400px; /* Ajustează dimensiunile iframe-ului după preferințe */
-            height: 600px; /* Ajustează dimensiunile iframe-ului după preferințe */
-            border: none;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-    </style>
-</head>
-<body>
-    <iframe src="https://steli.vercel.app" title="Chatbot"></iframe>
-</body>
-</html>
+

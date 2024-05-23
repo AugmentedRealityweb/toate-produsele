@@ -57,7 +57,6 @@
     </style>
 </head>
 <body>
- <iframe src="https://steli.vercel.app/" title="Chatbot" style="width: 400px; height: 700px; border: none; border-radius: 10px; overflow: auto; position: fixed; bottom: 20px; right: 20px;"></iframe>
 <div class="swipe-container" id="swipe-container">
     <div class="navigation">
         <button class="nav-button" id="prev-button">&#10094;</button>
@@ -124,5 +123,6 @@ document.addEventListener("DOMContentLoaded", function() {
     loadModels(currentSet); // Initial load of models
 });
 </script>
+ <iframe src="https://steli.vercel.app/" title="Chatbot" style="width: 400px; height: 700px; border: none; border-radius: 10px; overflow: auto; position: fixed; bottom: 20px; right: 20px;"></iframe>
 </body>
 </html>

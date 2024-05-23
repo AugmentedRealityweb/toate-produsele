@@ -60,9 +60,9 @@
             bottom: 20px;
             right: 20px;
             width: 400px;
-            max-width: 90%;
+            max-width: 100%;
             height: 500px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 0px rgba(0, 0, 0, 0.0);
             border-radius: 8px;
             overflow: hidden;
         }

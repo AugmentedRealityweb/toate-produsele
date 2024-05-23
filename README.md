@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="ro">
 <head>
     <meta charset="UTF-8">
@@ -12,7 +13,7 @@
             align-items: center;
             justify-content: center;
             height: 100vh;
-            background: url('/mnt/data/image.png') no-repeat center center fixed;
+            background: url('image.png') no-repeat center center fixed;
             background-size: cover;
         }
         iframe {

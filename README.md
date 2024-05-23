@@ -25,7 +25,7 @@
             position: relative;
             margin-left: 17px;
         }
-        .swipe-container iframe {
+        iframe {
             width: 200px;
             height: 240px;
             border: none;
@@ -53,24 +53,6 @@
         }
         .nav-button:hover {
             opacity: 1;
-        }
-        /* Stiluri specifice pentru containerul și iframe-ul chatbot-ului */
-        .chatbot-container {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 400px;
-            max-width: 100%;
-            height: 600px; /* Ajustat pentru a include tot conținutul */
-            box-shadow: 0 0px 0px rgba(0, 0, 0, 0.0);
-            border-radius: 8px;
-            overflow: hidden;
-        }
-        .chatbot-container iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-            overflow: auto; /* Asigură-te că întregul conținut este vizibil */
         }
     </style>
 </head>
@@ -142,11 +124,5 @@ document.addEventListener("DOMContentLoaded", function() {
     loadModels(currentSet); // Initial load of models
 });
 </script>
-
-<!-- Integrarea chatbot-ului -->
-<div class="chatbot-container">
-    <iframe src="https://steli.vercel.app/"></iframe>
-</div>
-
 </body>
 </html>

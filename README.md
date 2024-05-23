@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Swipe pentru Modele 3D</title>
     <style>
+        
         body {
             font-family: Arial, sans-serif;
             background-color: #f0f0f0;
@@ -57,6 +58,8 @@
     </style>
 </head>
 <body>
+     <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+<div class="elfsight-app-c3696b81-572b-4f23-8797-5e2382b596c4" data-elfsight-app-lazy></div>
 <div class="swipe-container" id="swipe-container">
     <div class="navigation">
         <button class="nav-button" id="prev-button">&#10094;</button>
@@ -122,8 +125,6 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     loadModels(currentSet); // Initial load of models
 });
-    <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
-<div class="elfsight-app-c3696b81-572b-4f23-8797-5e2382b596c4" data-elfsight-app-lazy></div>
 </script>
  <iframe src="https://steli.vercel.app/" title="Chatbot" style="width: 300px; height: 600px; border: none; border-radius: 10px; overflow: auto; position: fixed; bottom: 10px; right: 10px;"></iframe>
 </body>

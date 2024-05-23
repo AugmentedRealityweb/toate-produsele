@@ -1,3 +1,4 @@
+<html lang="ro">
 <head>
   <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -134,5 +135,27 @@ document.addEventListener("DOMContentLoaded", function() {
 });
     
 </script>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embed Chatbot</title>
+    <style>
+        #chatbot-iframe {
+            width: 350px; /* Ajustează dimensiunea */
+            height: 500px; /* Ajustează dimensiunea */
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            border: none;
+            border-radius: 20px;
+            box-shadow: 0 0 0px rgba(0, 0, 0, 0.0);
+        }
+    </style>
+</head>
+<body>
+    <iframe id="chatbot-iframe" src="https://steli.vercel.app" title="Chatbot"></iframe>
+</body>
+</html>
 </body>
 </html>

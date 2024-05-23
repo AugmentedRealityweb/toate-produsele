@@ -1,50 +1,14 @@
 <html lang="ro">
 <head>
-    <!DOCTYPE html>
-<html lang="en">
-<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Site with Chatbot</title>
-    <style>
-        #chatbot-widget {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 400px;
-            height: 600px;
-            border: none;
-            box-shadow: 0 0px 0px rgba(0, 0, 0, 0.0);
-            border-radius: 10px;
-            overflow: hidden;
-        }
-    </style>
-</head>
-<body>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var chatContainer = document.createElement('div');
-            chatContainer.id = 'chat-container';
-            var iframe = document.createElement('iframe');
-            iframe.id = 'chatbot-widget';
-            iframe.src = 'https://steli.vercel.app/';
-            chatContainer.appendChild(iframe);
-            document.body.appendChild(chatContainer);
-        });
-    </script>
-</body>
-</html>
-
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Swipe pentru Modele 3D</title>
+    <title>Embed Chatbot și Modele 3D</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             background-color: #f0f0f0;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
             height: 100vh;
             margin: 0;
@@ -56,17 +20,18 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            width: 200px; /* Adjust this as needed */
+            width: 200px; /* Ajustează dimensiunea după preferințe */
             overflow: hidden;
             position: relative;
             margin-left: 17px;
+            flex-grow: 1; /* Pentru a ocupa spațiul rămas */
         }
         iframe {
             width: 200px;
             height: 240px;
             border: none;
             border-radius: 30%;
-            margin-bottom: 60px; /* Space between models */
+            margin-bottom: 60px; /* Spațiul dintre modele */
         }
         .navigation {
             display: flex;
@@ -77,7 +42,7 @@
             transform: translateY(-50%);
         }
         .nav-button {
-            background-color: #007BFF; /* Bootstrap primary color for reference */
+            background-color: #007BFF; /* Culoarea butonului */
             color: white;
             border: none;
             border-radius: 50%;
@@ -91,85 +56,86 @@
             opacity: 1;
         }
         #chatbot-iframe {
-            width: 350px; /* Adjust as needed */
-            height: 500px; /* Adjust as needed */
+            width: 350px; /* Ajustează dimensiunea */
+            height: 500px; /* Ajustează dimensiunea */
             position: fixed;
             bottom: 10px;
             right: 10px;
             border: none;
             border-radius: 20px;
-            box-shadow: 0 0 0px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
 <body>
-
-<div class="swipe-container" id="swipe-container">
-    <div class="navigation">
-        <button class="nav-button" id="prev-button">&#10094;</button>
-        <button class="nav-button" id="next-button">&#10095;</button>
+    <div class="swipe-container" id="swipe-container">
+        <div class="navigation">
+            <button class="nav-button" id="prev-button">&#10094;</button>
+            <button class="nav-button" id="next-button">&#10095;</button>
+        </div>
     </div>
-</div>
 
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    let currentSet = 0;
-    const models = [
-        ["https://augmentedrealityweb.github.io/AF1/index.html", "https://augmentedrealityweb.github.io/Nike/index.html"],
-        ["https://augmentedrealityweb.github.io/Jordan/index.html", "https://augmentedrealityweb.github.io/Guler-Cervical/index.html"],
-        ["https://augmentedrealityweb.github.io/Scaun-Ikea/index.html", "https://augmentedrealityweb.github.io/Chanel/index.html"]
-    ];
+    <iframe id="chatbot-iframe" src="https://steli.vercel.app" title="Chatbot"></iframe>
 
-    function loadModels(setIndex) {
-        const swipeContainer = document.getElementById('swipe-container');
-        swipeContainer.innerHTML = ''; // Clear the container before loading new models
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        let currentSet = 0;
+        const models = [
+            ["https://augmentedrealityweb.github.io/AF1/index.html", "https://augmentedrealityweb.github.io/Nike/index.html"],
+            ["https://augmentedrealityweb.github.io/Jordan/index.html", "https://augmentedrealityweb.github.io/Guler-Cervical/index.html"],
+            ["https://augmentedrealityweb.github.io/Scaun-Ikea/index.html", "https://augmentedrealityweb.github.io/Chanel/index.html"]
+        ];
 
-        // Adding the navigation buttons back to the swipe container
-        const navigation = document.createElement('div');
-        navigation.className = 'navigation';
-        swipeContainer.appendChild(navigation);
+        function loadModels(setIndex) {
+            const swipeContainer = document.getElementById('swipe-container');
+            swipeContainer.innerHTML = ''; // Clear the container before loading new models
 
-        models[setIndex].forEach(modelUrl => {
-            const iframe = document.createElement('iframe');
-            iframe.src = modelUrl;
-            swipeContainer.insertBefore(iframe, navigation); // Insert models before the navigation
-        });
+            // Adding the navigation buttons back to the swipe container
+            const navigation = document.createElement('div');
+            navigation.className = 'navigation';
+            swipeContainer.appendChild(navigation);
 
-        // Re-adding event listeners to the navigation buttons
-        const nextButton = document.createElement('button');
-        nextButton.className = 'nav-button';
-        nextButton.id = 'next-button';
-        nextButton.innerHTML = '&#10095;';
-        navigation.appendChild(nextButton);
+            models[setIndex].forEach(modelUrl => {
+                const iframe = document.createElement('iframe');
+                iframe.src = modelUrl;
+                swipeContainer.insertBefore(iframe, navigation); // Insert models before the navigation
+            });
 
-        const prevButton = document.createElement('button');
-        prevButton.className = 'nav-button';
-        prevButton.id = 'prev-button';
-        prevButton.innerHTML = '&#10094;';
-        navigation.insertBefore(prevButton, navigation.firstChild);
+            // Re-adding event listeners to the navigation buttons
+            const nextButton = document.createElement('button');
+            nextButton.className = 'nav-button';
+            nextButton.id = 'next-button';
+            nextButton.innerHTML = '&#10095;';
+            navigation.appendChild(nextButton);
 
-        // Event listeners for buttons
-        nextButton.addEventListener('click', function() {
-            if (currentSet === models.length - 1) {
-                currentSet = 0; // Reset to the first set of models if at the end
-            } else {
-                currentSet++; // Otherwise, increment to the next set
-            }
-            loadModels(currentSet);
-        });
+            const prevButton = document.createElement('button');
+            prevButton.className = 'nav-button';
+            prevButton.id = 'prev-button';
+            prevButton.innerHTML = '&#10094;';
+            navigation.insertBefore(prevButton, navigation.firstChild);
 
-        prevButton.addEventListener('click', function() {
-            if (currentSet === 0) {
-                currentSet = models.length - 1; // Go to the last set of models if at the beginning
-            } else {
-                currentSet--; // Otherwise, decrement to the previous set
-            }
-            loadModels(currentSet);
-        });
-    }
-    loadModels(currentSet); // Initial load of models
-});
-    
-</script>
+            // Event listeners for buttons
+            nextButton.addEventListener('click', function() {
+                if (currentSet === models.length - 1) {
+                    currentSet = 0; // Reset to the first set of models if at the end
+                } else {
+                    currentSet++; // Otherwise, increment to the next set
+                }
+                loadModels(currentSet);
+            });
+
+            prevButton.addEventListener('click', function() {
+                if (currentSet === 0) {
+                    currentSet = models.length - 1; // Go to the last set of models if at the beginning
+                } else {
+                    currentSet--; // Otherwise, decrement to the previous set
+                }
+                loadModels(currentSet);
+            });
+        }
+        loadModels(currentSet); // Initial load of models
+    });
+    </script>
 </body>
 </html>
+

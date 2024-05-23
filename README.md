@@ -67,7 +67,7 @@
     </style>
 </head>
 <body>
-
+ <iframe src="https://steli.vercel.app" title="Chatbot"></iframe>  
 <div class="swipe-container" id="swipe-container">
     <div class="navigation">
         <button class="nav-button" id="prev-button">&#10094;</button>

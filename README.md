@@ -123,6 +123,6 @@ document.addEventListener("DOMContentLoaded", function() {
     loadModels(currentSet); // Initial load of models
 });
 </script>
- <iframe src="https://steli.vercel.app/" title="Chatbot" style="width: 300px; height: 700px; border: none; border-radius: 10px; overflow: auto; position: fixed; bottom: 10px; right: 10px;"></iframe>
+ <iframe src="https://evo-dent.vercel.app/" title="Chatbot" style="width: 300px; height: 700px; border: none; border-radius: 10px; overflow: auto; position: fixed; bottom: 10px; right: 10px;"></iframe>
 </body>
 </html>

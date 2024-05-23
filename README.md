@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="ro">
 <head>
     <meta charset="UTF-8">
@@ -26,7 +25,7 @@
             position: relative;
             margin-left: 17px;
         }
-        iframe {
+        .swipe-container iframe {
             width: 200px;
             height: 240px;
             border: none;
@@ -54,6 +53,23 @@
         }
         .nav-button:hover {
             opacity: 1;
+        }
+        /* Stiluri specifice pentru containerul și iframe-ul chatbot-ului */
+        .chatbot-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 400px;
+            max-width: 90%;
+            height: 500px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .chatbot-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
         }
     </style>
 </head>
@@ -127,8 +143,8 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 
 <!-- Integrarea chatbot-ului -->
-<div id="chatbot-container" style="position: fixed; bottom: 20px; right: 20px; width: 400px; max-width: 90%; height: 500px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); border-radius: 8px; overflow: hidden;">
-    <iframe src="https://steli.vercel.app/" style="width: 100%; height: 100%; border: none;"></iframe>
+<div class="chatbot-container">
+    <iframe src="https://steli.vercel.app/"></iframe>
 </div>
 
 </body>

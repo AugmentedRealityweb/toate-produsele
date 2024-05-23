@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Embed Chatbot și Modele 3D</title>
+    <title>Embed Modele 3D</title>
     <style>
         body {
             margin: 0;
@@ -14,17 +14,6 @@
             height: 100vh;
             background: url('image.png') no-repeat center center fixed;
             background-size: cover;
-        }
-        .chatbot {
-            width: 350px; /* Ajustează dimensiunile containerului după preferințe */
-            height: 500px; /* Ajustează dimensiunile containerului după preferințe */
-            position: fixed;
-            bottom: 10px;
-            right: 10px;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            background-color: white;
         }
         .swipe-container {
             display: flex;
@@ -66,7 +55,6 @@
     </style>
 </head>
 <body>
-    <div id="chatbot" class="chatbot"></div>
 
     <div class="swipe-container" id="swipe-container">
         <div class="navigation">
@@ -132,16 +120,6 @@
                 });
             }
             loadModels(currentSet); // Initial load of models
-
-            // Load the chatbot script
-            const script = document.createElement('script');
-            script.src = 'https://steli.vercel.app/';
-            script.onload = function() {
-                const chatbotContainer = document.getElementById('chatbot');
-                const chatbot = new window.Chatbot();
-                chatbot.init(chatbotContainer);
-            };
-            document.body.appendChild(script);
         });
     </script>
 </body>

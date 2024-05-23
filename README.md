@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="ro">
 <head>
     <meta charset="UTF-8">
@@ -124,5 +125,11 @@ document.addEventListener("DOMContentLoaded", function() {
     loadModels(currentSet); // Initial load of models
 });
 </script>
+
+<!-- Integrarea chatbot-ului -->
+<div id="chatbot-container" style="position: fixed; bottom: 20px; right: 20px; width: 400px; max-width: 90%; height: 500px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); border-radius: 8px; overflow: hidden;">
+    <iframe src="https://URLUL_TAU_VERCEL" style="width: 100%; height: 100%; border: none;"></iframe>
+</div>
+
 </body>
 </html>

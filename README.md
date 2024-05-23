@@ -12,7 +12,8 @@
             align-items: center;
             justify-content: center;
             height: 100vh;
-            background-color: #f0f0f0;
+            background: url('/mnt/data/image.png') no-repeat center center fixed;
+            background-size: cover;
         }
         iframe {
             border: none;
@@ -20,9 +21,11 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
         .chatbot {
-            width: 400px; /* Ajustează dimensiunile iframe-ului după preferințe */
-            height: 600px; /* Ajustează dimensiunile iframe-ului după preferințe */
-            margin-bottom: 20px;
+            width: 350px; /* Ajustează dimensiunile iframe-ului după preferințe */
+            height: 500px; /* Ajustează dimensiunile iframe-ului după preferințe */
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
         }
         .swipe-container {
             display: flex;

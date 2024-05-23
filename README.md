@@ -2,13 +2,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Embed Chatbot și Modele 3D</title>
+    <title>Embed Chatbot</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        iframe {
+            width: 400px; /* Ajustează dimensiunile iframe-ului după preferințe */
+            height: 600px; /* Ajustează dimensiunile iframe-ului după preferințe */
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <iframe src="https://steli.vercel.app" title="Chatbot"></iframe>
+</body>
+</html>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swipe pentru Modele 3D</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             background-color: #f0f0f0;
             display: flex;
-            flex-direction: column;
+            justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
@@ -20,18 +47,17 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            width: 200px; /* Ajustează dimensiunea după preferințe */
+            width: 200px; /* Adjust this as needed */
             overflow: hidden;
             position: relative;
             margin-left: 17px;
-            flex-grow: 1; /* Pentru a ocupa spațiul rămas */
         }
         iframe {
             width: 200px;
             height: 240px;
             border: none;
             border-radius: 30%;
-            margin-bottom: 60px; /* Spațiul dintre modele */
+            margin-bottom: 60px; /* Space between models */
         }
         .navigation {
             display: flex;
@@ -42,7 +68,7 @@
             transform: translateY(-50%);
         }
         .nav-button {
-            background-color: #007BFF; /* Culoarea butonului */
+            background-color: #007BFF; /* Bootstrap primary color for reference */
             color: white;
             border: none;
             border-radius: 50%;
@@ -56,86 +82,85 @@
             opacity: 1;
         }
         #chatbot-iframe {
-            width: 350px; /* Ajustează dimensiunea */
-            height: 500px; /* Ajustează dimensiunea */
+            width: 350px; /* Adjust as needed */
+            height: 500px; /* Adjust as needed */
             position: fixed;
             bottom: 10px;
             right: 10px;
             border: none;
             border-radius: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 0px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
 <body>
-    <div class="swipe-container" id="swipe-container">
-        <div class="navigation">
-            <button class="nav-button" id="prev-button">&#10094;</button>
-            <button class="nav-button" id="next-button">&#10095;</button>
-        </div>
+
+<div class="swipe-container" id="swipe-container">
+    <div class="navigation">
+        <button class="nav-button" id="prev-button">&#10094;</button>
+        <button class="nav-button" id="next-button">&#10095;</button>
     </div>
+</div>
 
-    <iframe id="chatbot-iframe" src="https://steli.vercel.app" title="Chatbot"></iframe>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    let currentSet = 0;
+    const models = [
+        ["https://augmentedrealityweb.github.io/AF1/index.html", "https://augmentedrealityweb.github.io/Nike/index.html"],
+        ["https://augmentedrealityweb.github.io/Jordan/index.html", "https://augmentedrealityweb.github.io/Guler-Cervical/index.html"],
+        ["https://augmentedrealityweb.github.io/Scaun-Ikea/index.html", "https://augmentedrealityweb.github.io/Chanel/index.html"]
+    ];
 
-    <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        let currentSet = 0;
-        const models = [
-            ["https://augmentedrealityweb.github.io/AF1/index.html", "https://augmentedrealityweb.github.io/Nike/index.html"],
-            ["https://augmentedrealityweb.github.io/Jordan/index.html", "https://augmentedrealityweb.github.io/Guler-Cervical/index.html"],
-            ["https://augmentedrealityweb.github.io/Scaun-Ikea/index.html", "https://augmentedrealityweb.github.io/Chanel/index.html"]
-        ];
+    function loadModels(setIndex) {
+        const swipeContainer = document.getElementById('swipe-container');
+        swipeContainer.innerHTML = ''; // Clear the container before loading new models
 
-        function loadModels(setIndex) {
-            const swipeContainer = document.getElementById('swipe-container');
-            swipeContainer.innerHTML = ''; // Clear the container before loading new models
+        // Adding the navigation buttons back to the swipe container
+        const navigation = document.createElement('div');
+        navigation.className = 'navigation';
+        swipeContainer.appendChild(navigation);
 
-            // Adding the navigation buttons back to the swipe container
-            const navigation = document.createElement('div');
-            navigation.className = 'navigation';
-            swipeContainer.appendChild(navigation);
+        models[setIndex].forEach(modelUrl => {
+            const iframe = document.createElement('iframe');
+            iframe.src = modelUrl;
+            swipeContainer.insertBefore(iframe, navigation); // Insert models before the navigation
+        });
 
-            models[setIndex].forEach(modelUrl => {
-                const iframe = document.createElement('iframe');
-                iframe.src = modelUrl;
-                swipeContainer.insertBefore(iframe, navigation); // Insert models before the navigation
-            });
+        // Re-adding event listeners to the navigation buttons
+        const nextButton = document.createElement('button');
+        nextButton.className = 'nav-button';
+        nextButton.id = 'next-button';
+        nextButton.innerHTML = '&#10095;';
+        navigation.appendChild(nextButton);
 
-            // Re-adding event listeners to the navigation buttons
-            const nextButton = document.createElement('button');
-            nextButton.className = 'nav-button';
-            nextButton.id = 'next-button';
-            nextButton.innerHTML = '&#10095;';
-            navigation.appendChild(nextButton);
+        const prevButton = document.createElement('button');
+        prevButton.className = 'nav-button';
+        prevButton.id = 'prev-button';
+        prevButton.innerHTML = '&#10094;';
+        navigation.insertBefore(prevButton, navigation.firstChild);
 
-            const prevButton = document.createElement('button');
-            prevButton.className = 'nav-button';
-            prevButton.id = 'prev-button';
-            prevButton.innerHTML = '&#10094;';
-            navigation.insertBefore(prevButton, navigation.firstChild);
+        // Event listeners for buttons
+        nextButton.addEventListener('click', function() {
+            if (currentSet === models.length - 1) {
+                currentSet = 0; // Reset to the first set of models if at the end
+            } else {
+                currentSet++; // Otherwise, increment to the next set
+            }
+            loadModels(currentSet);
+        });
 
-            // Event listeners for buttons
-            nextButton.addEventListener('click', function() {
-                if (currentSet === models.length - 1) {
-                    currentSet = 0; // Reset to the first set of models if at the end
-                } else {
-                    currentSet++; // Otherwise, increment to the next set
-                }
-                loadModels(currentSet);
-            });
-
-            prevButton.addEventListener('click', function() {
-                if (currentSet === 0) {
-                    currentSet = models.length - 1; // Go to the last set of models if at the beginning
-                } else {
-                    currentSet--; // Otherwise, decrement to the previous set
-                }
-                loadModels(currentSet);
-            });
-        }
-        loadModels(currentSet); // Initial load of models
-    });
-    </script>
+        prevButton.addEventListener('click', function() {
+            if (currentSet === 0) {
+                currentSet = models.length - 1; // Go to the last set of models if at the beginning
+            } else {
+                currentSet--; // Otherwise, decrement to the previous set
+            }
+            loadModels(currentSet);
+        });
+    }
+    loadModels(currentSet); // Initial load of models
+});
+    
+</script>
 </body>
 </html>
-

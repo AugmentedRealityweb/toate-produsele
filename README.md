@@ -135,8 +135,6 @@ document.addEventListener("DOMContentLoaded", function() {
 });
     
 </script>
-<!DOCTYPE html>
-<html lang="ro">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -162,6 +160,5 @@ document.addEventListener("DOMContentLoaded", function() {
 </head>
 <body>
     <iframe src="https://steli.vercel.app" title="Chatbot"></iframe>
-</body>
 </body>
 </html>

@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="ro">
 <head>
     <meta charset="UTF-8">
@@ -55,12 +54,12 @@
         .nav-button:hover {
             opacity: 1;
         }
-        #chat-container {
+        #chatbot-iframe {
+            width: 350px; /* Adjust as needed */
+            height: 500px; /* Adjust as needed */
             position: fixed;
             bottom: 10px;
             right: 10px;
-            width: 350px; /* Adjust as needed */
-            height: 500px; /* Adjust as needed */
             border: none;
             border-radius: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -76,6 +75,8 @@
         <button class="nav-button" id="next-button">&#10095;</button>
     </div>
 </div>
+
+<iframe id="chatbot-iframe" src="https://steli.vercel.app" title="Chatbot"></iframe>
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
@@ -136,29 +137,6 @@ document.addEventListener("DOMContentLoaded", function() {
     loadModels(currentSet); // Initial load of models
 });
 </script>
-
-<!-- Chatbot integration -->
-<div id="chat-container"></div>
-<script defer src="https://steli.vercel.app/ChatComponent.bundle.js"></script>
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    // Check if the chat container exists
-    var chatContainer = document.getElementById('chat-container');
-    // If the chat container doesn't exist, create it
-    if (!chatContainer) {
-      chatContainer = document.createElement('div');
-      chatContainer.id = 'chat-container';
-      document.body.appendChild(chatContainer);
-    }
-    // Initialize the Chat component
-    if (window.ChatComponent) {
-      ChatComponent.init('2mcfi6tJjQtthDmjXRUL','#chat-container');
-    } else {
-      console.error('ChatComponent is not available');
-    }
-  });
-</script>
-<!-- End of Chatbot integration -->
 
 </body>
 </html>

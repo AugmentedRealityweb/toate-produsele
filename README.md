@@ -122,6 +122,8 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     loadModels(currentSet); // Initial load of models
 });
+    <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+<div class="elfsight-app-c3696b81-572b-4f23-8797-5e2382b596c4" data-elfsight-app-lazy></div>
 </script>
  <iframe src="https://steli.vercel.app/" title="Chatbot" style="width: 300px; height: 600px; border: none; border-radius: 10px; overflow: auto; position: fixed; bottom: 10px; right: 10px;"></iframe>
 </body>

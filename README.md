@@ -3,6 +3,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Swipe pentru Modele 3D</title>
+    <iframe src="https://steli.vercel.app/" title="Chatbot" style="width: 400px; height: 700px; border: none; border-radius: 10px; overflow: auto; position: fixed; bottom: 20px; right: 20px;"></iframe>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -123,7 +124,6 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     loadModels(currentSet); // Initial load of models
 });
-     <iframe src="https://steli.vercel.app/" title="Chatbot" style="width: 400px; height: 700px; border: none; border-radius: 10px; overflow: auto; position: fixed; bottom: 20px; right: 20px;"></iframe>
 </script>
 </body>
 </html>

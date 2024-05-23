@@ -1,5 +1,7 @@
+<!DOCTYPE html>
 <html lang="ro">
-<meta charset="UTF-8">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Swipe pentru Modele 3D</title>
     <style>
@@ -132,9 +134,10 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     loadModels(currentSet); // Initial load of models
 });
-    
-</script
-  <script defer src="https://steli.vercel.app/ChatComponent.bundle.js"></script>
+</script>
+
+<!-- Chatbot integration -->
+<script defer src="https://steli.vercel.app/ChatComponent.bundle.js"></script>
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     // Check if the chat container exists
@@ -153,5 +156,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
 </script>
+<!-- End of Chatbot integration -->
+
 </body>
 </html>

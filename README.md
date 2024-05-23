@@ -128,7 +128,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 <!-- Integrarea chatbot-ului -->
 <div id="chatbot-container" style="position: fixed; bottom: 20px; right: 20px; width: 400px; max-width: 90%; height: 500px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); border-radius: 8px; overflow: hidden;">
-    <iframe src="https://URLUL_TAU_VERCEL" style="width: 100%; height: 100%; border: none;"></iframe>
+    <iframe src="https://steli.vercel.app/" style="width: 100%; height: 100%; border: none;"></iframe>
 </div>
 
 </body>

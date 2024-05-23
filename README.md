@@ -58,8 +58,7 @@
     </style>
 </head>
 <body>
-     <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
-<div class="elfsight-app-c3696b81-572b-4f23-8797-5e2382b596c4" data-elfsight-app-lazy></div>
+    
 <div class="swipe-container" id="swipe-container">
     <div class="navigation">
         <button class="nav-button" id="prev-button">&#10094;</button>

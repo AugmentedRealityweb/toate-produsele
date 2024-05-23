@@ -63,15 +63,7 @@
             right: 10px;
             border: none;
             border-radius: 20px;
-            box-shadow: 0 0 0px rgba(0, 0, 0, 0.1);
-        }
-        #chat-container {
-            position: fixed;
-            bottom: 10px;
-            right: 10px;
-            width: 350px;
-            height: 500px;
-            z-index: 9999;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
@@ -145,20 +137,7 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 
 <!-- Chatbot integration -->
-<div id="chat-container"></div>
-<script defer src="https://steli.vercel.app/ChatComponent.bundle.js"></script>
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    // Check if the chat container exists
-    var chatContainer = document.getElementById('chat-container');
-    // Initialize the Chat component
-    if (window.ChatComponent) {
-      ChatComponent.init('2mcfi6tJjQtthDmjXRUL','#chat-container');
-    } else {
-      console.error('ChatComponent is not available');
-    }
-  });
-</script>
+<iframe id="chatbot-iframe" src="https://steli.vercel.app" title="Chatbot"></iframe>
 <!-- End of Chatbot integration -->
 
 </body>

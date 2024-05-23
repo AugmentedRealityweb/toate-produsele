@@ -132,8 +132,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
     loadModels(currentSet); // Initial load of models
-});
- <iframe src="https://steli.vercel.app" title="Chatbot"></iframe>   
+}); 
 </script>
 </body>
 </html>
